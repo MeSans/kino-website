@@ -1,0 +1,35 @@
+
+Use case scenario 1.
+	Actor: Visitor
+
+		Visitor looks at the recently coming up movie seansess.
+		Visitor changes some parameters to display seansess that have only action movies and have a specific price.
+		Only the seansess that satisfy the query are shown.
+		Visitor fucks off.(maybe revised to buy)
+
+Use case scenario 2.
+	Actor: Employee
+
+		Employee opens up the employees section of the website. (like myApp/maintenance)
+		Employee is asked for user name and password, which he provides.
+		Employee is greeted by a screen with the list of upcoming seansess and navigation options.
+		Employee uses button to get to a list of movies.
+		Employee adds a new movie.
+		Employee Presses a button to get to seansess list and adds another choosing a movie and venue from a list.
+		Employee navigates to complete list of seansess.
+		Employee queries this list to filter for the movie seanss he added.
+
+
+Use case scenario 3.
+	Actor: Manager
+
+		Manager Opens up the empoyees section of the site.
+		Manager is asked for authorization, which he provides. ! He has full privilage through same view employees use.
+		Manager is greeted by a screen containing upcoming seansess and employee activity.
+		Manager presses a button and is shown the list of employees.
+		Manager queries this list to only see a subset of employees.
+		Manager then sorts this employees subset by name.
+		Manager presses a button to add new employee.
+		Manager adds employee info in new screen and presses add.
+		Manager is redirected back to Employees list.
+
