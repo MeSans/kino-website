@@ -1,0 +1,31 @@
+User groups and roles.
+
+Visitor.
+
+	Yes:
+		Can view site.
+		Change query paramaters and see results
+
+	No:
+		Does not have access to maintenace section
+		Does not have access to managers pages
+		Can not edit any records.
+
+
+Employee.
+	
+	Yes:
+		Can view site.
+		Has access to maintenance section
+		Change query parameters and see results
+		Can add new movies/seansees and other business information
+
+
+	No:
+		Can not edit existing employee list
+		Acessing managers pages. (employee lists, CRUDS)
+
+Manager.
+
+	Yes:
+		Do anything he wants
