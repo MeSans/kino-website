@@ -1,0 +1,15 @@
+Everything is an object.
+
+Is garbage collected.
+
+
+
+C# pitfalls:
+    Value types get default values on creation. So check values emptyness by myvalue.isEmpty()
+    Garbage collection deletes objects asynchronously.
+    Don’t free system resources like connection to files in destructors. Rather free them as soon as you are finished with them. Just use using like this:(calls dispose hell or high-water)
+    using (FileStream myFile = File.OpenRead("foo.txt")) {
+    myFile.Read(buffer, 0, 100);
+  }
+    Cast shit like this (something else)something. This throws InvalidCastException is impossible
+    Just a motherfucking function: http://csharp.net-tutorials.com/csharp-3.0/extension-methods/
