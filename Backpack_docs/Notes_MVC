@@ -1,0 +1,27 @@
+ELI5 MVC
+
+Controller: Gets request (usually url), executes some custom code and returns a view.
+
+
+
+The view is responsible for providing the user interface (UI) to the user. After the
+controller has executed the appropriate logic for the requested URL, it delegates the
+display to the view.
+Unlike fi
+le-based web frameworks, such as ASP.NET Web Forms and PHP, views are not themselves
+directly accessible. You can’t point your browser to a view and have it render. Instead, a view is
+always rendered by a controller, which provides the data the view will render
+
+Controllers
+within the MVC pattern are responsible for responding to user input, often mak-
+ing changes to the model in response to user input. In this way, controllers in the MVC pattern
+are concerned with the fl
+ow of the application, working with data coming in, and providing
+data going out to the relevant view.
+
+
+The URL tells the routing mechanism
+(which you’ll begin to explore in the next few chapters, and learn about in depth in Chapter 9) which
+controller class to instantiate and which action method to call, and supplies the required arguments
+to that method. The controller’s method then decides which view to use, and that view then renders
+the HTML.
