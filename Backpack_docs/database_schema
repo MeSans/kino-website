@@ -3,14 +3,24 @@ ID
 Id_Director
 Name
 ReleaseDate
+Genre
+ReleaseDate
+Rating
+Description
+Id_MoviePicture
+YoutubeLink
 
 
 Screening
 ID
-Id_Camera
+Id_Movie
 Id_Venue
 ScreeningStart
-ScreeningLength?
+ScreeningEnd
+BasePrice
+IsPremiere
+Language
+SubtitleLanguage
 
 
 Venue
