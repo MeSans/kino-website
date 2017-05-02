@@ -13,18 +13,18 @@ namespace KinoSuite.Controllers
         {
             using (var ctx = new KinoContext())
             {
-                Movie movie = new Movie() { Name = "test movie" };
+                Movie movie = new Movie() { Title = "test movie" };
 
                 ctx.Movies.Add(movie);
                 ctx.SaveChanges();
 
                 var query = from test in ctx.Movies
-                            orderby test.Name
+                            orderby test.Title
                             select test;
 
                 foreach (var item in query)
                 {
-                    ViewBag.Items += item.Name;
+                    ViewBag.Items += item.Title;
                 }
             }
             return View();

@@ -13,10 +13,12 @@ namespace KinoSuite.Models
     {
         [Key]
         public int ID { get; set; }
-        public Address? Adress { get; set; }
 
+        [Display(Name = "Venue adress")]
+        [StringLength(60)]
+        public Address? Adress { get; set; }//WARNING -> no validation (how to validate adress???)
 
-        public ICollection<Screening> Screenings { get; set; }
+        public virtual ICollection<Screening> Screenings { get; set; }
 
     }
 }
