@@ -176,12 +176,38 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\EmployeesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ManagersController.cs" />
+    <Compile Include="Controllers\MoviesController.cs" />
+    <Compile Include="Controllers\ScreeningsController.cs" />
+    <Compile Include="Controllers\VenuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="KinoContext.cs" />
+    <Compile Include="Migrations\201705011842473_InitialCreate.cs" />
+    <Compile Include="Migrations\201705011842473_InitialCreate.Designer.cs">
+      <DependentUpon>201705011842473_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705021633252_Validations.cs" />
+    <Compile Include="Migrations\201705021633252_Validations.Designer.cs">
+      <DependentUpon>201705021633252_Validations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705021834378_debug.cs" />
+    <Compile Include="Migrations\201705021834378_debug.Designer.cs">
+      <DependentUpon>201705021834378_debug.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705021838067_debug_2.cs" />
+    <Compile Include="Migrations\201705021838067_debug_2.Designer.cs">
+      <DependentUpon>201705021838067_debug_2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705021848438_debug_3.cs" />
+    <Compile Include="Migrations\201705021848438_debug_3.Designer.cs">
+      <DependentUpon>201705021848438_debug_3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -258,6 +284,31 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Employees\Create.cshtml" />
+    <Content Include="Views\Employees\Delete.cshtml" />
+    <Content Include="Views\Employees\Details.cshtml" />
+    <Content Include="Views\Employees\Edit.cshtml" />
+    <Content Include="Views\Employees\Index.cshtml" />
+    <Content Include="Views\Managers\Create.cshtml" />
+    <Content Include="Views\Managers\Delete.cshtml" />
+    <Content Include="Views\Managers\Details.cshtml" />
+    <Content Include="Views\Managers\Edit.cshtml" />
+    <Content Include="Views\Managers\Index.cshtml" />
+    <Content Include="Views\Movies\Create.cshtml" />
+    <Content Include="Views\Movies\Delete.cshtml" />
+    <Content Include="Views\Movies\Details.cshtml" />
+    <Content Include="Views\Movies\Edit.cshtml" />
+    <Content Include="Views\Movies\Index.cshtml" />
+    <Content Include="Views\Screenings\Create.cshtml" />
+    <Content Include="Views\Screenings\Delete.cshtml" />
+    <Content Include="Views\Screenings\Details.cshtml" />
+    <Content Include="Views\Screenings\Edit.cshtml" />
+    <Content Include="Views\Screenings\Index.cshtml" />
+    <Content Include="Views\Venues\Create.cshtml" />
+    <Content Include="Views\Venues\Delete.cshtml" />
+    <Content Include="Views\Venues\Details.cshtml" />
+    <Content Include="Views\Venues\Edit.cshtml" />
+    <Content Include="Views\Venues\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -266,6 +317,23 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201705011842473_InitialCreate.resx">
+      <DependentUpon>201705011842473_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705021633252_Validations.resx">
+      <DependentUpon>201705021633252_Validations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705021834378_debug.resx">
+      <DependentUpon>201705021834378_debug.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705021838067_debug_2.resx">
+      <DependentUpon>201705021838067_debug_2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705021848438_debug_3.resx">
+      <DependentUpon>201705021848438_debug_3.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

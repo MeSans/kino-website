@@ -38,12 +38,12 @@ namespace KinoSuite.Models
 
         //Foreign keys
         //Screening Shows one movie in one venue
-        public int MovieRefId { get; set; }//Warning -> possibly unneccessary
-        [ForeignKey("MovieRefId")]
+       // public int MovieRefId { get; set; }//Warning -> possibly unneccessary
+       // [ForeignKey("MovieRefId")]
         public virtual Movie Movie { get; set; }
 
-        public int VenueRefId { get; set; }//Warning -> possibly unneccessary
-        [ForeignKey("VenueRefId")]
+      //  public int VenueRefId { get; set; }//Warning -> possibly unneccessary
+      //  [ForeignKey("VenueRefId")]
         public virtual Venue Venue { get; set; }
     }
 }

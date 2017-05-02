@@ -15,7 +15,7 @@ namespace KinoSuite.Models
          
         [StringLength(60)]
         [Required(ErrorMessage = "Movie must have a Title")]
-        [RegularExpression(@"^[\p{L}\p{N}]*$", ErrorMessage = "Disallowed characters in Title")]//Any unicode letter or number
+        [RegularExpression("[A-z]+", ErrorMessage = "Disallowed characters in Title")]
         public string Title { get; set; }
 
         [Display(Name = "Release Date")]
@@ -24,18 +24,18 @@ namespace KinoSuite.Models
         public DateTime? ReleaseDate { get; set; }
 
         [StringLength(60)]
-        [RegularExpression(@"^[\p{L}\p{N}]*$", ErrorMessage = "Disallowed characters in Genre")]//Any unicode letter or number
+        [RegularExpression("[A-z]+", ErrorMessage = "Disallowed characters in Genre")]
         public string Genre { get; set; }
 
         [Range(0,5)]
         public int Rating { get; set; }
 
         [StringLength(200)]
-        [RegularExpression(@"^[\p{L}\p{N}]*$", ErrorMessage = "Disallowed characters in Description")]//Any unicode letter or number
+        [RegularExpression("[A-z]+", ErrorMessage = "Disallowed characters in Description")]
         public string Description { get; set; }
         
         [Display(Name = "Youtube link")]
-        [StringLength(300)]
+        [StringLength(100)]
         public string YouTubeLink { get; set; }
 
         

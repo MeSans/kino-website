@@ -1,0 +1,58 @@
+﻿@model KinoSuite.Models.Screening
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Screening</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ScreeningStart)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ScreeningStart)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ScreeningEnd)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ScreeningEnd)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BasePrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BasePrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsPremiere)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsPremiere)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SubtitleLanguage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SubtitleLanguage)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

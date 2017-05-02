@@ -148,3 +148,9 @@ C:\Users\Patriks-Pc\Desktop\kino-application\kino-suite\KinoSuite\KinoSuite\bin\
 C:\Users\Patriks-Pc\Desktop\kino-application\kino-suite\KinoSuite\KinoSuite\obj\Debug\KinoSuite.csprojResolveAssemblyReference.cache
 C:\Users\Patriks-Pc\Desktop\kino-application\kino-suite\KinoSuite\KinoSuite\obj\Debug\KinoSuite.dll
 C:\Users\Patriks-Pc\Desktop\kino-application\kino-suite\KinoSuite\KinoSuite\obj\Debug\KinoSuite.pdb
+C:\Users\Patriks-Pc\Desktop\kino-application\kino-suite\KinoSuite\KinoSuite\obj\Debug\KinoSuite.Migrations.InitialCreate.resources
+C:\Users\Patriks-Pc\Desktop\kino-application\kino-suite\KinoSuite\KinoSuite\obj\Debug\KinoSuite.csproj.GenerateResource.Cache
+C:\Users\Patriks-Pc\Desktop\kino-application\kino-suite\KinoSuite\KinoSuite\obj\Debug\KinoSuite.Migrations.Validations.resources
+C:\Users\Patriks-Pc\Desktop\kino-application\kino-suite\KinoSuite\KinoSuite\obj\Debug\KinoSuite.Migrations.debug.resources
+C:\Users\Patriks-Pc\Desktop\kino-application\kino-suite\KinoSuite\KinoSuite\obj\Debug\KinoSuite.Migrations.debug_2.resources
+C:\Users\Patriks-Pc\Desktop\kino-application\kino-suite\KinoSuite\KinoSuite\obj\Debug\KinoSuite.Migrations.debug_3.resources
