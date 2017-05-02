@@ -1,1 +1,5 @@
 The goal is kino employees to be able to handle all the usual tasks of crrating, updating and deleting movies/seansess/venues, and their information like description, prices, ratings, even pictures WITHOT writing a line of code.
+
+Fun fact:
+    There are no rules regarding names. You can have anything. So i just let unicode people decide for me 
+    This regular expression validation checks if every letter or number that unicode considers such. This way i can be pretty sure all the weird accented letter from every language is accepted and people don't get mad.
