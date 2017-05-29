@@ -19,7 +19,8 @@ namespace KinoSuite.Controllers
         // GET: Screenings
         public async Task<ActionResult> Index()
         {
-            return View(await db.Screenings.ToListAsync());
+            var screenings = db.Screenings.Include(s => s.Movie).Include(s => s.Venue);
+            return View(await screenings.ToListAsync());
         }
 
         // GET: Screenings/Details/5
@@ -40,6 +41,8 @@ namespace KinoSuite.Controllers
         // GET: Screenings/Create
         public ActionResult Create()
         {
+            ViewBag.MovieId = new SelectList(db.Movies, "ID", "Title");
+            ViewBag.VenueId = new SelectList(db.Venues, "ID", "ID");
             return View();
         }
 
@@ -48,7 +51,7 @@ namespace KinoSuite.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "ID,ScreeningStart,ScreeningEnd,BasePrice,IsPremiere,SubtitleLanguage")] Screening screening)
+        public async Task<ActionResult> Create([Bind(Include = "ID,MovieId,VenueId,ScreeningStart,ScreeningEnd,BasePrice,IsPremiere,SubtitleLanguage")] Screening screening)
         {
             if (ModelState.IsValid)
             {
@@ -57,6 +60,8 @@ namespace KinoSuite.Controllers
                 return RedirectToAction("Index");
             }
 
+            ViewBag.MovieId = new SelectList(db.Movies, "ID", "Title", screening.MovieId);
+            ViewBag.VenueId = new SelectList(db.Venues, "ID", "ID", screening.VenueId);
             return View(screening);
         }
 
@@ -72,6 +77,8 @@ namespace KinoSuite.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.MovieId = new SelectList(db.Movies, "ID", "Title", screening.MovieId);
+            ViewBag.VenueId = new SelectList(db.Venues, "ID", "ID", screening.VenueId);
             return View(screening);
         }
 
@@ -80,7 +87,7 @@ namespace KinoSuite.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "ID,ScreeningStart,ScreeningEnd,BasePrice,IsPremiere,SubtitleLanguage")] Screening screening)
+        public async Task<ActionResult> Edit([Bind(Include = "ID,MovieId,VenueId,ScreeningStart,ScreeningEnd,BasePrice,IsPremiere,SubtitleLanguage")] Screening screening)
         {
             if (ModelState.IsValid)
             {
@@ -88,6 +95,8 @@ namespace KinoSuite.Controllers
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
+            ViewBag.MovieId = new SelectList(db.Movies, "ID", "Title", screening.MovieId);
+            ViewBag.VenueId = new SelectList(db.Venues, "ID", "ID", screening.VenueId);
             return View(screening);
         }
 

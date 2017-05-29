@@ -17,6 +17,10 @@
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.ID)
 
+        @Html.HiddenFor(model => model.MovieId)
+
+        @Html.HiddenFor(model => model.VenueId)
+
         <div class="form-group">
             @Html.LabelFor(model => model.ScreeningStart, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">

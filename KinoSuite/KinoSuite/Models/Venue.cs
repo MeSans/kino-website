@@ -12,11 +12,13 @@ namespace KinoSuite.Models
     public class Venue
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ID { get; set; }
 
         [Display(Name = "Venue adress")]
         [StringLength(60)]
-        public Address? Adress { get; set; }//WARNING -> no validation (how to validate adress???)
+        [RegularExpression(@"[\p{L}\s\.\'\,]*", ErrorMessage = "Disallowed characters in name")]
+        public Address? Adress { get; set; }
 
         public virtual ICollection<Screening> Screenings { get; set; }
 

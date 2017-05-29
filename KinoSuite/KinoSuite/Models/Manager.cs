@@ -14,11 +14,11 @@ namespace KinoSuite.Models
         public int ID { get; set; }
     
         [StringLength(60)]
-        [RegularExpression(@"^[\p{L}\p{N}]*$", ErrorMessage = "Disallowed characters in name")]//Any unicode letter or number
+        [RegularExpression(@"^[a-zA-Z''-'\s]{1,40}$", ErrorMessage = "Disallowed characters in name")]
         public string Name { get; set; }
 
         [StringLength(60)]
-        [RegularExpression(@"^[\p{L}\p{N}]*$", ErrorMessage = "Disallowed characters in surname")]//Any unicode letter or number
+        [RegularExpression(@"^[a-zA-Z''-'\s]{1,40}$", ErrorMessage = "Disallowed characters in surname")]
         public string Surname { get; set; }
 
 
@@ -33,7 +33,7 @@ namespace KinoSuite.Models
 
         [Display(Name = "phone number")]
         [DataType(DataType.PhoneNumber)]
-        [RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$", ErrorMessage = "Not a valid Phone number")]//
+        [RegularExpression(@"(\+?\d{3}[\-\ ]?)?\d{8}", ErrorMessage = "Not a valid Phone number")]//
         public string Phone { get; set; }
     }
 }

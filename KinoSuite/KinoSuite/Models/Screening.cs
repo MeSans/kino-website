@@ -10,16 +10,17 @@ namespace KinoSuite.Models
     [Table("Screening")]
     public class Screening
     {
-        [Key]
+        
+        [Key, Column(Order = 0), DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ID { get; set; }
 
         [Display(Name = "Screening start")]
-        [DataType(DataType.Date)]
+        [DataType(DataType.DateTime)]
         [DisplayFormat(DataFormatString = "{0:g}", ApplyFormatInEditMode = true)]//Format date according to location
         public DateTime? ScreeningStart { get; set; }
 
         [Display(Name = "Screening end")]
-        [DataType(DataType.Date)]
+        [DataType(DataType.DateTime)]
         [DisplayFormat(DataFormatString = "{0:g}", ApplyFormatInEditMode = true)]//Format date according to location
         public DateTime? ScreeningEnd { get; set; }
 
@@ -27,23 +28,23 @@ namespace KinoSuite.Models
         [DataType(DataType.Currency)]
         public float? BasePrice { get; set; }
 
-        [Display(Name = "Premiere")]//Smell -> not direct property to name
+        [Display(Name = "Premiere")]
         public Boolean? IsPremiere { get; set; }
 
         [Display(Name = "Subtitles")]
         [StringLength(60)]
-        [RegularExpression(@"^[\p{L}\p{N}]*$", ErrorMessage = "Disallowed characters in subtitle language")]//Any unicode letter or number
+        [RegularExpression(@"^[a-zA-Z''-'\s]{1,40}$", ErrorMessage = "Disallowed characters in subtitle language")]
         public string SubtitleLanguage { get; set; }
 
 
         //Foreign keys
         //Screening Shows one movie in one venue
-       // public int MovieRefId { get; set; }//Warning -> possibly unneccessary
-       // [ForeignKey("MovieRefId")]
+        [Key, Column(Order = 1), ForeignKey("Movie")]
+        public int MovieId { get; set; }
         public virtual Movie Movie { get; set; }
 
-      //  public int VenueRefId { get; set; }//Warning -> possibly unneccessary
-      //  [ForeignKey("VenueRefId")]
+        [Key, Column(Order = 2), ForeignKey("Venue")]
+        public int VenueId { get; set; }
         public virtual Venue Venue { get; set; }
     }
 }

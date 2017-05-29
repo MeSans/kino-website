@@ -12,6 +12,12 @@
 <table class="table">
     <tr>
         <th>
+            @Html.DisplayNameFor(model => model.Movie.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Venue.ID)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.ScreeningStart)
         </th>
         <th>
@@ -32,6 +38,12 @@
 @foreach (var item in Model) {
     <tr>
         <td>
+            @Html.DisplayFor(modelItem => item.Movie.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Venue.ID)
+        </td>
+        <td>
             @Html.DisplayFor(modelItem => item.ScreeningStart)
         </td>
         <td>
@@ -47,9 +59,9 @@
             @Html.DisplayFor(modelItem => item.SubtitleLanguage)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
         </td>
     </tr>
 }
