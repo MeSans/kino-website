@@ -16,36 +16,22 @@ namespace KinoSuite.Controllers
 
         public ActionResult Index()
         {
-            //var viewModel =
-            //        from pd in db.ProjectsData
-            //        join p in db.Projects on pd.ProjectId equals p.ID
-            //        where pd.UserName == this.HttpContext.User.Identity.Name
-            //        orderby p.Name, p.ProjectNo
-            //        select new MyViewModel { ProjectData = pd, Project = p };
-
             var context = new KinoContext();
-            //var model1 = new UpcomingScreeningsViewModel();
-
-            var screenings = context.Screenings;
             var movies = context.Movies;
 
-            var model = new UpcomingScreeningsViewModel()
-            {
-                Movies = movies,
-                Screenings = screenings,
-            };
-            //model1 = from screenings in context.Screenings
-            //         join movie in context.Movies on screenings.MovieId equals movie.ID
-            //         select new UpcomingScreeningsViewModel { Screenings = screenings, Movies = movie };
+            var queryResults =
+                (from mov in context.Movies
+                join screen in context.Screenings on mov.ID equals screen.MovieId
+                select new UpcomingScreening {
+                    Title = mov.Title,
+                    genre = mov.Genre,
+                    Image = "implement images, dipshit",
+                    language = screen.SubtitleLanguage,
+                }).ToList();
+                var viewModel = new UpcomingScreeningsViewModel();
+                viewModel.ScreeningItems = queryResults;
 
-
-            //model1.Screenings = context.Screenings;
-            //model1.Movies = ;
-
-
-
-
-            return View(model);
+            return View(viewModel);
         }
 
         public ActionResult About()

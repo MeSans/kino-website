@@ -49,11 +49,9 @@ namespace KinoSuite.Models
     {
         public UpcomingScreeningsViewModel()
         {
-            this.Screenings = new List<Screening>();
-            this.Movies = new List<Movie>();
+            this.ScreeningItems = new List<UpcomingScreening>();
         }
-        public IEnumerable<Screening> Screenings { get; set; }
-        public IEnumerable<Movie> Movies { get; set; }
+        public List<Models.UpcomingScreening> ScreeningItems;
 
 
     }

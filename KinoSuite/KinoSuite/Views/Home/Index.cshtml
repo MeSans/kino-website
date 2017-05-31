@@ -15,36 +15,13 @@
 </div>
 
 <div class="row">
-        @foreach (var item in Model.Screenings)
-        {
-            <div class="screening-block">
-              @*  <img src="@Url.Content("~/" + @item.AvatarImage)" alt="#">*@
-                
-              @*  <h3>@item.MovieId</h3>*@
-                @*<h4>@item.Movie.Description</h4>*@
-                
-                <h4>@item.ScreeningStart</h4>
-                <p>@item.ScreeningEnd</p>
-                @*<div class="icon-awesome">
-                    <a href="@Url.Content("~/" + @item.AvatarImage)" rel="prettyPhoto"><i class="icon-search"></i></a>
-                    <a href="@Url.Content("/Home/Details/" + @item.Title + "/" + @item.CategoryId + "/" + @item.ItemId)"><i class="icon-link"></i></a>
-                </div>*@
-            </div>
-        }
-@foreach (var item in Model.Movies)
-{
-    <div class="screening-block">
-        @*  <img src="@Url.Content("~/" + @item.AvatarImage)" alt="#">*@
-
-        @*  <h3>@item.MovieId</h3>*@
-        @*<h4>@item.Movie.Description</h4>*@
-
-        <h4>@item.Title</h4>
-        <p>@item.Description</p>
-        @*<div class="icon-awesome">
-                <a href="@Url.Content("~/" + @item.AvatarImage)" rel="prettyPhoto"><i class="icon-search"></i></a>
-                <a href="@Url.Content("/Home/Details/" + @item.Title + "/" + @item.CategoryId + "/" + @item.ItemId)"><i class="icon-link"></i></a>
-            </div>*@
-    </div>
-}
+    @foreach (var item in Model.ScreeningItems)
+    { 
+    <h4>@item.Image</h4>
+    <h4>@item.Title</h4>
+    <h4>@item.isPremiere</h4>
+    <h4>@item.length</h4>
+    <h4>@item.language</h4>
+    <h4>@item.subtitleLanguage</h4>
+ }
 </div>

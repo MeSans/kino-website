@@ -38,6 +38,7 @@ namespace KinoSuite.Models
         public string SubtitleLanguage { get; set; }
 
 
+
         //Foreign keys
         //Screening Shows one movie in one venue
         [Key, Column(Order = 1), ForeignKey("Movie")]

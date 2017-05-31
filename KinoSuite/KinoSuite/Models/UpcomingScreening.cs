@@ -10,11 +10,25 @@ namespace KinoSuite.Models
     {
         public UpcomingScreening()
         {
-            this.screening = new Screening();
-            this.Movie = new Movie();            
-        }
-        public Screening screening { get; set; }
-        public Movie Movie { get; set; }
+            this.Image = "PLACEHOLDER. CHANGE THIS TO IMAGE";
+            this.Title = "";
+            this.genre = "";
+            this.startTime = DateTime.MinValue;
+            this.length = "";
+            this.language = "";
+            this.subtitleLanguage = "";
+            this.isPremiere = false;
 
+
+        }
+        public string Image { get; set; }
+        public string Title { get; set; }
+        public string genre { get; set; }
+        public DateTime? startTime { get; set; }
+        public string length { get; set; }
+        public string language { get; set; }
+        public string subtitleLanguage { get; set; }
+        public bool isPremiere { get; set; }
+    
     }
 }
