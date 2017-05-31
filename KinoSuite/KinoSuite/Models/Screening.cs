@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Collections;
 
 namespace KinoSuite.Models
 {
@@ -46,7 +47,10 @@ namespace KinoSuite.Models
         [Key, Column(Order = 2), ForeignKey("Venue")]
         public int VenueId { get; set; }
         public virtual Venue Venue { get; set; }
+
     }
+
+
 }
 
 //Screening
