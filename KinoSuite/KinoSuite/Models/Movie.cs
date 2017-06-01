@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
+using System.Collections.Generic;
 
 namespace KinoSuite.Models
 {
@@ -16,7 +17,7 @@ namespace KinoSuite.Models
          
         [StringLength(60)]
         [Required(ErrorMessage = "Movie must have a Title")]
-        [RegularExpression(@"^[a-zA-Z''-'\s]{1,40}$", ErrorMessage = "Disallowed characters in Title")]//Any character unicode calls a letter, dot or coma
+        [RegularExpression(@"^[a-zA-Z1-9''-'\s]{1,40}$", ErrorMessage = "Disallowed characters in Title")]//Any character unicode calls a letter, dot or coma
         public string Title { get; set; }
 
 
@@ -40,8 +41,13 @@ namespace KinoSuite.Models
         [StringLength(100)]
         public string YouTubeLink { get; set; }
 
-        
+        ////Raw byte array holding the imageData
+        //[Display(Name ="Stock Image")]
+        //public string Img_File { get; set; }
+
         public virtual ICollection<Screening> Screenings { get; set; }
+
+        public virtual ICollection<File> Files { get; set; }
 
 
     }

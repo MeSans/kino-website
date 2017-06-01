@@ -37,7 +37,7 @@ namespace KinoSuite.Models
         [RegularExpression(@"^[a-zA-Z''-'\s]{1,40}$", ErrorMessage = "Disallowed characters in subtitle language")]
         public string SubtitleLanguage { get; set; }
 
-
+        
 
         //Foreign keys
         //Screening Shows one movie in one venue

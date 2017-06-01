@@ -5,7 +5,7 @@
 }
 
 <div class="jumbotron">
-    <h1>Upcoming screenings</h1> 
+    <h1>What's on this month</h1> 
 </div>
 
 
@@ -15,13 +15,28 @@
 </div>
 
 <div class="row">
-    @foreach (var item in Model.ScreeningItems)
-    { 
-    <h4>@item.Image</h4>
-    <h4>@item.Title</h4>
-    <h4>@item.isPremiere</h4>
-    <h4>@item.length</h4>
-    <h4>@item.language</h4>
-    <h4>@item.subtitleLanguage</h4>
- }
+    
+
+        @foreach (var item in Model.ScreeningItems)
+        {
+            <div class="row upcoming-screening row-eq-height">
+                <div class="col-sm-4">
+                    @if (@item.Image != null)
+                    {
+                        <img class="screening-img img-responsive" src="data:image;base64,@System.Convert.ToBase64String(@item.Image)" alt="img" />
+                    }
+                </div>
+                <div class="col-sm-8">
+                    <h1>@item.Title <br /> @item.genre</h1>
+                    <h2>@item.Description</h2>
+                    <h3>Screening start: @item.startTime</h3>
+                    <h3>Movie length: @item.length</h3>
+                    <h4>Premiere: @item.isPremiere</h4>
+                    <h4>Length: @item.length minutes</h4>
+                    <h4>Language: @item.language</h4>
+                    <h4>Subtitle language: @item.subtitleLanguage</h4>
+                </div>
+                
+            </div>
+        }
 </div>

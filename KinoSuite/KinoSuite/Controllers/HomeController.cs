@@ -6,6 +6,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Data.Entity;
 
 namespace KinoSuite.Controllers
 {
@@ -17,7 +18,6 @@ namespace KinoSuite.Controllers
         public ActionResult Index()
         {
             var context = new KinoContext();
-            var movies = context.Movies;
 
             var queryResults =
                 (from mov in context.Movies
@@ -25,8 +25,11 @@ namespace KinoSuite.Controllers
                 select new UpcomingScreening {
                     Title = mov.Title,
                     genre = mov.Genre,
-                    Image = "implement images, dipshit",
+                    Image = mov.Files.FirstOrDefault().Content,
                     language = screen.SubtitleLanguage,
+                    Description = mov.Description,
+                    length = DbFunctions.DiffMinutes(screen.ScreeningStart, screen.ScreeningEnd)
+                    
                 }).ToList();
                 var viewModel = new UpcomingScreeningsViewModel();
                 viewModel.ScreeningItems = queryResults;

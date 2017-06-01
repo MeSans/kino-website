@@ -187,6 +187,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\EmployeesController.cs" />
+    <Compile Include="Controllers\FileController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ManagersController.cs" />
@@ -221,9 +222,31 @@
     <Compile Include="Migrations\201705031646151_Pre-fillValues.Designer.cs">
       <DependentUpon>201705031646151_Pre-fillValues.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201705311704448_addImageField.cs" />
+    <Compile Include="Migrations\201705311704448_addImageField.Designer.cs">
+      <DependentUpon>201705311704448_addImageField.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706010740476_changedimgtoURL.cs" />
+    <Compile Include="Migrations\201706010740476_changedimgtoURL.Designer.cs">
+      <DependentUpon>201706010740476_changedimgtoURL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706010758098_imgtoFileBase.cs" />
+    <Compile Include="Migrations\201706010758098_imgtoFileBase.Designer.cs">
+      <DependentUpon>201706010758098_imgtoFileBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706010806025_imgtoFile.cs" />
+    <Compile Include="Migrations\201706010806025_imgtoFile.Designer.cs">
+      <DependentUpon>201706010806025_imgtoFile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706010819169_Files.cs" />
+    <Compile Include="Migrations\201706010819169_Files.Designer.cs">
+      <DependentUpon>201706010819169_Files.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Employee.cs" />
+    <Compile Include="Models\File.cs" />
+    <Compile Include="Models\FileType.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Manager.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -279,7 +302,9 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="Views\Web.config" />
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
@@ -335,6 +360,8 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="App_Themes\ion\" />
+    <Folder Include="Uploads\Images\" />
+    <Folder Include="Views\File\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -360,6 +387,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201705031646151_Pre-fillValues.resx">
       <DependentUpon>201705031646151_Pre-fillValues.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705311704448_addImageField.resx">
+      <DependentUpon>201705311704448_addImageField.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706010740476_changedimgtoURL.resx">
+      <DependentUpon>201706010740476_changedimgtoURL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706010758098_imgtoFileBase.resx">
+      <DependentUpon>201706010758098_imgtoFileBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706010806025_imgtoFile.resx">
+      <DependentUpon>201706010806025_imgtoFile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706010819169_Files.resx">
+      <DependentUpon>201706010819169_Files.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

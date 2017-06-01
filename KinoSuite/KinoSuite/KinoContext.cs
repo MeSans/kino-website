@@ -24,5 +24,6 @@ namespace KinoSuite
         public DbSet<Venue> Venues { get; set; }
         public DbSet<Screening> Screenings { get; set; }
         public DbSet<Movie> Movies { get; set; }
+        public DbSet<File> Files { get; set; }
     }
 }

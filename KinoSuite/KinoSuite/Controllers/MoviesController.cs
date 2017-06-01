@@ -9,6 +9,7 @@ using System.Web;
 using System.Web.Mvc;
 using KinoSuite;
 using KinoSuite.Models;
+using System.IO;
 
 namespace KinoSuite.Controllers
 {
@@ -29,7 +30,8 @@ namespace KinoSuite.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Movie movie = await db.Movies.FindAsync(id);
+            //Movie movie = await db.Movies.FindAsync(id);
+            Movie movie = db.Movies.Include(s => s.Files).SingleOrDefault(s => s.ID == id);
             if (movie == null)
             {
                 return HttpNotFound();
@@ -48,8 +50,23 @@ namespace KinoSuite.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "ID,Title,ReleaseDate,Genre,Rating,Description,YouTubeLink")] Movie movie)
+        public async Task<ActionResult> Create([Bind(Include = "ID,Title,ReleaseDate,Genre,Rating,Description,YouTubeLink") ] Movie movie, HttpPostedFileBase upload)
         {
+            if (upload != null && upload.ContentLength > 0)
+            {
+                var avatar = new Models.File
+                {
+                    FileName = System.IO.Path.GetFileName(upload.FileName),
+                    FileType = FileType.Stock,
+                    ContentType = upload.ContentType
+                };
+                using (var reader = new System.IO.BinaryReader(upload.InputStream))
+                {
+                    avatar.Content = reader.ReadBytes(upload.ContentLength);
+                }
+                movie.Files = new List<Models.File> { avatar };
+            }
+
             if (ModelState.IsValid)
             {
                 db.Movies.Add(movie);

@@ -191,3 +191,8 @@ C:\Users\Patriks-Pc\Desktop\kino-application\kino-suite\KinoSuite\KinoSuite\bin\
 C:\Users\Patriks-Pc\Desktop\kino-application\kino-suite\KinoSuite\KinoSuite\bin\roslyn\System.Xml.XPath.XDocument.dll
 C:\Users\Patriks-Pc\Desktop\kino-application\kino-suite\KinoSuite\KinoSuite\bin\roslyn\vbc.exe.config
 C:\Users\Patriks-Pc\Desktop\kino-application\kino-suite\KinoSuite\KinoSuite\bin\roslyn\vbc.rsp
+C:\Users\Patriks-Pc\Desktop\kino-application\kino-suite\KinoSuite\KinoSuite\obj\Debug\KinoSuite.Migrations.addImageField.resources
+C:\Users\Patriks-Pc\Desktop\kino-application\kino-suite\KinoSuite\KinoSuite\obj\Debug\KinoSuite.Migrations.changedimgtoURL.resources
+C:\Users\Patriks-Pc\Desktop\kino-application\kino-suite\KinoSuite\KinoSuite\obj\Debug\KinoSuite.Migrations.imgtoFileBase.resources
+C:\Users\Patriks-Pc\Desktop\kino-application\kino-suite\KinoSuite\KinoSuite\obj\Debug\KinoSuite.Migrations.imgtoFile.resources
+C:\Users\Patriks-Pc\Desktop\kino-application\kino-suite\KinoSuite\KinoSuite\obj\Debug\KinoSuite.Migrations.Files.resources

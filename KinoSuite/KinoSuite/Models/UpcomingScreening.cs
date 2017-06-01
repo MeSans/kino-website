@@ -10,25 +10,27 @@ namespace KinoSuite.Models
     {
         public UpcomingScreening()
         {
-            this.Image = "PLACEHOLDER. CHANGE THIS TO IMAGE";
+            this.Image = new byte[] { 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20 }; ;
+            this.length = 0;
             this.Title = "";
             this.genre = "";
             this.startTime = DateTime.MinValue;
-            this.length = "";
             this.language = "";
+            this.Description = "";
             this.subtitleLanguage = "";
             this.isPremiere = false;
 
 
         }
-        public string Image { get; set; }
+        public byte[] Image { get; set; }
         public string Title { get; set; }
         public string genre { get; set; }
+        public string Description { get; set; }
         public DateTime? startTime { get; set; }
-        public string length { get; set; }
         public string language { get; set; }
         public string subtitleLanguage { get; set; }
         public bool isPremiere { get; set; }
+        public int? length { get; set; }
     
     }
 }
