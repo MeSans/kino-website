@@ -5,6 +5,7 @@ using System.Web;
 using System.ComponentModel.DataAnnotations;
 
 using KinoSuite.Models;
+using System.Web.Mvc;
 
 namespace KinoSuite.Models
 {
@@ -15,7 +16,8 @@ namespace KinoSuite.Models
             this.ScreeningItems = new List<UpcomingScreening>();
         }
         public List<Models.UpcomingScreening> ScreeningItems;
-
+        public IEnumerable<Models.Genre> Genres;
+        public string SelectedGenre { get; set; }
 
     }
 }

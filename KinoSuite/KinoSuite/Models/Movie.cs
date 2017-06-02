@@ -23,7 +23,7 @@ namespace KinoSuite.Models
 
         [Display(Name = "Release Date")]
         [DataType(DataType.DateTime)]
-        [DisplayFormat(DataFormatString = "{0:g}", ApplyFormatInEditMode = true)]//Format date according to location
+        [DisplayFormat(DataFormatString = "{0:MM-dd-yyyy hh:mm tt}", ApplyFormatInEditMode = true)]//Format date according to location
         public DateTime? ReleaseDate { get; set; } = DateTime.Now;
 
         

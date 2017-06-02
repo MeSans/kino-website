@@ -26,7 +26,10 @@ textarea {
     max-width: 280px;
 }
 .upcoming-screening {
-
+    border-bottom-style:solid;
+    border-bottom-width:1px;
+    padding-bottom:4px;
+    padding-top:4px;
 }
 /*Set ALL the fonts to Lato. Can be overridden with inlines or importance qualifiers*/
 *
@@ -57,4 +60,8 @@ textarea {
     bottom: 0;
     background-repeat: no-repeat;
     background-size: contain;
+}
+.youtube-video
+{
+    margin-top = 10px;
 }

@@ -16,12 +16,12 @@ namespace KinoSuite.Models
 
         [Display(Name = "Screening start")]
         [DataType(DataType.DateTime)]
-        [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:MM-dd-yyyy hh:mm tt}", ApplyFormatInEditMode = true)]
         public DateTime? ScreeningStart { get; set; }
 
         [Display(Name = "Screening end")]
         [DataType(DataType.DateTime)]
-        [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:MM-dd-yyyy hh:mm tt}", ApplyFormatInEditMode = true)]
         public DateTime? ScreeningEnd { get; set; } 
 
         [Display(Name = "Price")]
@@ -36,15 +36,22 @@ namespace KinoSuite.Models
         [RegularExpression(@"^[a-zA-Z''-'\s]{1,40}$", ErrorMessage = "Disallowed characters in subtitle language")]
         public string SubtitleLanguage { get; set; }
 
-        
+
+        public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
+        {
+            if (this.ScreeningStart < this.ScreeningEnd)
+            {
+                yield return new ValidationResult("Screening start should be before screening end", new[] { "ScreeningStart" });
+            }
+        }
 
         //Foreign keys
         //Screening Shows one movie in one venue
-        [Key, Column(Order = 1), ForeignKey("Movie")]
+        [Column(Order = 1), ForeignKey("Movie")]
         public int MovieId { get; set; }
         public virtual Movie Movie { get; set; }
 
-        [Key, Column(Order = 2), ForeignKey("Venue")]
+        [Column(Order = 2), ForeignKey("Venue")]
         public int VenueId { get; set; }
         public virtual Venue Venue { get; set; }
 

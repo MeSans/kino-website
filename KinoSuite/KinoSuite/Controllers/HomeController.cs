@@ -26,7 +26,10 @@ namespace KinoSuite.Controllers
                     Image = mov.Files.FirstOrDefault().Content,
                     language = screen.SubtitleLanguage,
                     Description = mov.Description,
-                    length = DbFunctions.DiffMinutes(screen.ScreeningStart, screen.ScreeningEnd)
+                    length = DbFunctions.DiffMinutes(screen.ScreeningEnd, screen.ScreeningStart),
+                    youtube_link = mov.YouTubeLink,
+                    startTime = screen.ScreeningStart.Value,
+                    venue = screen.Venue.Name
                     
                 }).ToList();
                 var viewModel = new UpcomingScreeningsViewModel();

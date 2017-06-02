@@ -6,6 +6,7 @@
 
 <div class="jumbotron">
     <h1>What's on this month</h1> 
+    
 </div>
 
 
@@ -25,6 +26,12 @@
                     {
                         <img class="screening-img img-responsive" src="data:image;base64,@System.Convert.ToBase64String(@item.Image)" alt="img" />
                     }
+                    @if (@item.youtube_link != "")
+                    {
+                        <div class="embed-responsive embed-responsive-16by9">
+                        <iframe class="youtube-video" src="@item.youtube_link" allowfullscreen></iframe>
+                        </div>
+                    }
                 </div>
                 <div class="col-sm-8">
                     <h1>@item.Title <br /> @item.genre</h1>
@@ -35,6 +42,8 @@
                     <h4>Length: @item.length minutes</h4>
                     <h4>Language: @item.language</h4>
                     <h4>Subtitle language: @item.subtitleLanguage</h4>
+                   
+                    
                 </div>
                 
             </div>

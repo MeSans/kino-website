@@ -187,6 +187,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\FileController.cs" />
+    <Compile Include="Controllers\FindController.cs" />
     <Compile Include="Controllers\GenresController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -264,6 +265,10 @@
     <Compile Include="Migrations\201706020925321_goddmanit.cs" />
     <Compile Include="Migrations\201706020925321_goddmanit.Designer.cs">
       <DependentUpon>201706020925321_goddmanit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706021225466_screening-removed-weird-keys.cs" />
+    <Compile Include="Migrations\201706021225466_screening-removed-weird-keys.Designer.cs">
+      <DependentUpon>201706021225466_screening-removed-weird-keys.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -373,6 +378,7 @@
     <Content Include="Views\Genres\Details.cshtml" />
     <Content Include="Views\Genres\Edit.cshtml" />
     <Content Include="Views\Genres\Index.cshtml" />
+    <Content Include="Views\Find\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -436,6 +442,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706020925321_goddmanit.resx">
       <DependentUpon>201706020925321_goddmanit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706021225466_screening-removed-weird-keys.resx">
+      <DependentUpon>201706021225466_screening-removed-weird-keys.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

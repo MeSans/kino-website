@@ -14,10 +14,12 @@ namespace KinoSuite.Models
             this.length = 0;
             this.Title = "";
             this.genre = "";
+            this.venue = "";
             this.startTime = DateTime.MinValue;
             this.language = "";
             this.Description = "";
             this.subtitleLanguage = "";
+            this.youtube_link = "";
             this.isPremiere = false;
 
 
@@ -31,6 +33,8 @@ namespace KinoSuite.Models
         public string subtitleLanguage { get; set; }
         public bool isPremiere { get; set; }
         public int? length { get; set; }
+        public string youtube_link { get; set; }
+        public string venue { get; set; }
     
     }
 }
