@@ -186,11 +186,9 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\EmployeesController.cs" />
     <Compile Include="Controllers\FileController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\ManagersController.cs" />
     <Compile Include="Controllers\MoviesController.cs" />
     <Compile Include="Controllers\ScreeningsController.cs" />
     <Compile Include="Controllers\VenuesController.cs" />
@@ -250,13 +248,19 @@
     <Compile Include="Migrations\201706011800022_nope.Designer.cs">
       <DependentUpon>201706011800022_nope.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706020759279_no-empployee-manager.cs" />
+    <Compile Include="Migrations\201706020759279_no-empployee-manager.Designer.cs">
+      <DependentUpon>201706020759279_no-empployee-manager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706020806363_adresses-string.cs" />
+    <Compile Include="Migrations\201706020806363_adresses-string.Designer.cs">
+      <DependentUpon>201706020806363_adresses-string.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\File.cs" />
     <Compile Include="Models\FileType.cs" />
     <Compile Include="Models\IdentityModels.cs" />
-    <Compile Include="Models\Manager.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Movie.cs" />
     <Compile Include="Models\Screening.cs" />
@@ -339,16 +343,6 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Employees\Create.cshtml" />
-    <Content Include="Views\Employees\Delete.cshtml" />
-    <Content Include="Views\Employees\Details.cshtml" />
-    <Content Include="Views\Employees\Edit.cshtml" />
-    <Content Include="Views\Employees\Index.cshtml" />
-    <Content Include="Views\Managers\Create.cshtml" />
-    <Content Include="Views\Managers\Delete.cshtml" />
-    <Content Include="Views\Managers\Details.cshtml" />
-    <Content Include="Views\Managers\Edit.cshtml" />
-    <Content Include="Views\Managers\Index.cshtml" />
     <Content Include="Views\Movies\Create.cshtml" />
     <Content Include="Views\Movies\Delete.cshtml" />
     <Content Include="Views\Movies\Details.cshtml" />
@@ -364,6 +358,11 @@
     <Content Include="Views\Venues\Details.cshtml" />
     <Content Include="Views\Venues\Edit.cshtml" />
     <Content Include="Views\Venues\Index.cshtml" />
+    <Content Include="Views\Venues1\Create.cshtml" />
+    <Content Include="Views\Venues1\Delete.cshtml" />
+    <Content Include="Views\Venues1\Details.cshtml" />
+    <Content Include="Views\Venues1\Edit.cshtml" />
+    <Content Include="Views\Venues1\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -415,6 +414,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706011800022_nope.resx">
       <DependentUpon>201706011800022_nope.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706020759279_no-empployee-manager.resx">
+      <DependentUpon>201706020759279_no-empployee-manager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706020806363_adresses-string.resx">
+      <DependentUpon>201706020806363_adresses-string.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

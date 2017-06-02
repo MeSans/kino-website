@@ -12,7 +12,6 @@ using KinoSuite.Models;
 
 namespace KinoSuite.Controllers
 {
-    [Authorize]
     public class VenuesController : Controller
     {
         private KinoContext db = new KinoContext();
@@ -49,7 +48,7 @@ namespace KinoSuite.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "ID")] Venue venue)
+        public async Task<ActionResult> Create([Bind(Include = "ID,Name,Adress")] Venue venue)
         {
             if (ModelState.IsValid)
             {
@@ -81,7 +80,7 @@ namespace KinoSuite.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "ID")] Venue venue)
+        public async Task<ActionResult> Edit([Bind(Include = "ID,Name,Adress")] Venue venue)
         {
             if (ModelState.IsValid)
             {

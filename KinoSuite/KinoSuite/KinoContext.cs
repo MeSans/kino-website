@@ -19,8 +19,6 @@ namespace KinoSuite
         //Screening
         //Movie
 
-        public DbSet<Manager> Managers { get; set; }
-        public DbSet<Employee> Employees { get; set; }
         public DbSet<Venue> Venues { get; set; }
         public DbSet<Screening> Screenings { get; set; }
         public DbSet<Movie> Movies { get; set; }

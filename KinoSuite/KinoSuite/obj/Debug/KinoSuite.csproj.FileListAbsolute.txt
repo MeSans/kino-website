@@ -198,3 +198,5 @@ C:\Users\Patriks-Pc\Desktop\kino-application\kino-suite\KinoSuite\KinoSuite\obj\
 C:\Users\Patriks-Pc\Desktop\kino-application\kino-suite\KinoSuite\KinoSuite\obj\Debug\KinoSuite.Migrations.Files.resources
 C:\Users\Patriks-Pc\Desktop\kino-application\kino-suite\KinoSuite\KinoSuite\obj\Debug\KinoSuite.Migrations.requireddates.resources
 C:\Users\Patriks-Pc\Desktop\kino-application\kino-suite\KinoSuite\KinoSuite\obj\Debug\KinoSuite.Migrations.nope.resources
+C:\Users\Patriks-Pc\Desktop\kino-application\kino-suite\KinoSuite\KinoSuite\obj\Debug\KinoSuite.Migrations.noempployeemanager.resources
+C:\Users\Patriks-Pc\Desktop\kino-application\kino-suite\KinoSuite\KinoSuite\obj\Debug\KinoSuite.Migrations.adressesstring.resources

@@ -34,11 +34,9 @@
 
                     @if (User.Identity.IsAuthenticated)
                     {
-                        <li>@Html.ActionLink("Employees", "Index", "Employees", null, null)</li>
                         <li>@Html.ActionLink("Movies", "Index", "Movies", null, null)</li>
                         <li>@Html.ActionLink("Venues", "Index", "Venues", null, null)</li>
                         <li>@Html.ActionLink("Screenings", "Index", "Screenings", null, null)</li>
-                        <li>@Html.ActionLink("Managers", "Index", "Managers", null, null)</li>
                     }
 
                 </ul>

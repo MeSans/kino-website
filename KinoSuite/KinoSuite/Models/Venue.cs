@@ -15,10 +15,13 @@ namespace KinoSuite.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ID { get; set; }
 
+        [StringLength(40)]
+        [RegularExpression(@"^[a-zA-Z1-9''-'\s]{1,40}$", ErrorMessage = "Disallowed characters in Venue name")]
+        public string Name { get; set; }
+
         [Display(Name = "Venue adress")]
         [StringLength(60)]
-        [RegularExpression(@"[\p{L}\s\.\'\,]*", ErrorMessage = "Disallowed characters in name")]
-        public Address? Adress { get; set; }
+        public string Adress { get; set; }
 
         public virtual ICollection<Screening> Screenings { get; set; }
 
