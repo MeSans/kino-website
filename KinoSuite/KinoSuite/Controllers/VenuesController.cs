@@ -12,6 +12,7 @@ using KinoSuite.Models;
 
 namespace KinoSuite.Controllers
 {
+    [Authorize]
     public class VenuesController : Controller
     {
         private KinoContext db = new KinoContext();

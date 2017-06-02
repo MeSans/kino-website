@@ -24,7 +24,7 @@ namespace KinoSuite.Models
         [Display(Name = "Release Date")]
         [DataType(DataType.DateTime)]
         [DisplayFormat(DataFormatString = "{0:g}", ApplyFormatInEditMode = true)]//Format date according to location
-        public DateTime? ReleaseDate { get; set; }
+        public DateTime? ReleaseDate { get; set; } = DateTime.Now;
 
         [StringLength(60)]
         [RegularExpression(@"^[a-zA-Z''-'\s]{1,40}$", ErrorMessage = "Disallowed characters in Genre")]

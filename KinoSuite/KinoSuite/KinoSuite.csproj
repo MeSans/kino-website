@@ -242,6 +242,14 @@
     <Compile Include="Migrations\201706010819169_Files.Designer.cs">
       <DependentUpon>201706010819169_Files.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706011729042_required-dates.cs" />
+    <Compile Include="Migrations\201706011729042_required-dates.Designer.cs">
+      <DependentUpon>201706011729042_required-dates.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706011800022_nope.cs" />
+    <Compile Include="Migrations\201706011800022_nope.Designer.cs">
+      <DependentUpon>201706011800022_nope.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Employee.cs" />
@@ -360,7 +368,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="App_Themes\ion\" />
-    <Folder Include="Uploads\Images\" />
     <Folder Include="Views\File\" />
   </ItemGroup>
   <ItemGroup>
@@ -402,6 +409,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706010819169_Files.resx">
       <DependentUpon>201706010819169_Files.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706011729042_required-dates.resx">
+      <DependentUpon>201706011729042_required-dates.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706011800022_nope.resx">
+      <DependentUpon>201706011800022_nope.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

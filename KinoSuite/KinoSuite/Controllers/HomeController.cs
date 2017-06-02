@@ -12,9 +12,6 @@ namespace KinoSuite.Controllers
 {
     public class HomeController : Controller
     {
-        
-
-
         public ActionResult Index()
         {
             var context = new KinoContext();

@@ -15,7 +15,10 @@
 .dl-horizontal dt {
     white-space: normal;
 }
-
+.details-img{
+    max-height:400px;
+    max-width:400px;
+}
 /* Set width on the form input elements since they're 100% wide by default */
 input,
 select,
@@ -25,7 +28,7 @@ textarea {
 .upcoming-screening {
 
 }
-
+/*Set ALL the fonts to Lato. Can be overridden with inlines or importance qualifiers*/
 *
 {
     font-family:'Lato',serif;
@@ -50,7 +53,6 @@ textarea {
     text-indent: -9999px; /* hides the link text */
     position: absolute;
     top: 0;
-    left:250px;
     right: 0;
     bottom: 0;
     background-repeat: no-repeat;

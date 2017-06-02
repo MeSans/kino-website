@@ -10,20 +10,19 @@ namespace KinoSuite.Models
 {
     [Table("Screening")]
     public class Screening
-    {
-        
+    {   
         [Key, Column(Order = 0), DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ID { get; set; }
 
         [Display(Name = "Screening start")]
         [DataType(DataType.DateTime)]
-        [DisplayFormat(DataFormatString = "{0:g}", ApplyFormatInEditMode = true)]//Format date according to location
+        [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd}", ApplyFormatInEditMode = true)]
         public DateTime? ScreeningStart { get; set; }
 
         [Display(Name = "Screening end")]
         [DataType(DataType.DateTime)]
-        [DisplayFormat(DataFormatString = "{0:g}", ApplyFormatInEditMode = true)]//Format date according to location
-        public DateTime? ScreeningEnd { get; set; }
+        [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd}", ApplyFormatInEditMode = true)]
+        public DateTime? ScreeningEnd { get; set; } 
 
         [Display(Name = "Price")]
         [DataType(DataType.Currency)]

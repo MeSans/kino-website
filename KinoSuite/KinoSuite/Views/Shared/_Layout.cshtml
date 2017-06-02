@@ -23,19 +23,23 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand logo-img" })
+                
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand logo-img" })</li>
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    <li>@Html.ActionLink("Employees", "Index", "Employees", null, null)</li>
-                    <li>@Html.ActionLink("Movies", "Index", "Movies", null, null)</li>
-                    <li>@Html.ActionLink("Venues", "Index", "Venues", null, null)</li>
-                    <li>@Html.ActionLink("Screenings", "Index", "Screenings", null, null)</li>
-                    <li>@Html.ActionLink("Managers", "Index", "Managers", null, null)</li>
-                    <li>@Html.ActionLink("Employees", "Index", "Employees", null, null)</li>
+
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li>@Html.ActionLink("Employees", "Index", "Employees", null, null)</li>
+                        <li>@Html.ActionLink("Movies", "Index", "Movies", null, null)</li>
+                        <li>@Html.ActionLink("Venues", "Index", "Venues", null, null)</li>
+                        <li>@Html.ActionLink("Screenings", "Index", "Screenings", null, null)</li>
+                        <li>@Html.ActionLink("Managers", "Index", "Managers", null, null)</li>
+                    }
 
                 </ul>
                 
@@ -47,6 +51,7 @@
         <hr />
         <footer>
             <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p>@Html.Partial("_LoginPartial")</p>
         </footer>
     </div>
 

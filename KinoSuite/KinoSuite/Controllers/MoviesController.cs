@@ -13,6 +13,7 @@ using System.IO;
 
 namespace KinoSuite.Controllers
 {
+    [Authorize]
     public class MoviesController : Controller
     {
         private KinoContext db = new KinoContext();
