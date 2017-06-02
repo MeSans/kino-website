@@ -17,7 +17,7 @@ namespace KinoSuite.Models
          
         [StringLength(60)]
         [Required(ErrorMessage = "Movie must have a Title")]
-        [RegularExpression(@"^[a-zA-Z1-9''-'\s]{1,40}$", ErrorMessage = "Disallowed characters in Title")]//Any character unicode calls a letter, dot or coma
+        [RegularExpression(@"^[a-zA-Z1-9''-'\s]{1,40}$", ErrorMessage = "Disallowed characters in Title")]
         public string Title { get; set; }
 
 
@@ -26,9 +26,9 @@ namespace KinoSuite.Models
         [DisplayFormat(DataFormatString = "{0:g}", ApplyFormatInEditMode = true)]//Format date according to location
         public DateTime? ReleaseDate { get; set; } = DateTime.Now;
 
-        [StringLength(60)]
-        [RegularExpression(@"^[a-zA-Z''-'\s]{1,40}$", ErrorMessage = "Disallowed characters in Genre")]
-        public string Genre { get; set; }
+        
+        public int? GenreId { get; set; }
+        public virtual Genre Genre { get; set; }
 
         [Range(0,5)]
         public int Rating { get; set; }
@@ -41,25 +41,12 @@ namespace KinoSuite.Models
         [StringLength(100)]
         public string YouTubeLink { get; set; }
 
-        ////Raw byte array holding the imageData
-        //[Display(Name ="Stock Image")]
-        //public string Img_File { get; set; }
-
         public virtual ICollection<Screening> Screenings { get; set; }
-
+        
+        //Currently [6/2/2017] contains just one file. 
+        //Should stay as list for it is very likely that site will need more files per movie in future.
         public virtual ICollection<File> Files { get; set; }
 
 
     }
 }
-//movie
-//id
-//  id_director
-//name
-//releasedate
-//genre
-//releasedate
-//rating
-//description
-//  id_moviepicture
-//youtubelink

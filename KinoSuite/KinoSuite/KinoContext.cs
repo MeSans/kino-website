@@ -23,5 +23,7 @@ namespace KinoSuite
         public DbSet<Screening> Screenings { get; set; }
         public DbSet<Movie> Movies { get; set; }
         public DbSet<File> Files { get; set; }
+
+        public System.Data.Entity.DbSet<KinoSuite.Models.Genre> Genres { get; set; }
     }
 }

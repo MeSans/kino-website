@@ -9,11 +9,9 @@ using System.Web;
 using System.Web.Mvc;
 using KinoSuite;
 using KinoSuite.Models;
-using System.IO;
 
 namespace KinoSuite.Controllers
 {
-    [Authorize]
     public class MoviesController : Controller
     {
         private KinoContext db = new KinoContext();
@@ -21,7 +19,8 @@ namespace KinoSuite.Controllers
         // GET: Movies
         public async Task<ActionResult> Index()
         {
-            return View(await db.Movies.ToListAsync());
+            var movies = db.Movies.Include(m => m.Genre);
+            return View(await movies.ToListAsync());
         }
 
         // GET: Movies/Details/5
@@ -31,8 +30,7 @@ namespace KinoSuite.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            //Movie movie = await db.Movies.FindAsync(id);
-            Movie movie = db.Movies.Include(s => s.Files).SingleOrDefault(s => s.ID == id);
+            Movie movie = await db.Movies.FindAsync(id);
             if (movie == null)
             {
                 return HttpNotFound();
@@ -43,6 +41,7 @@ namespace KinoSuite.Controllers
         // GET: Movies/Create
         public ActionResult Create()
         {
+            ViewBag.GenreId = new SelectList(db.Genres, "ID", "Name");
             return View();
         }
 
@@ -51,7 +50,7 @@ namespace KinoSuite.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "ID,Title,ReleaseDate,Genre,Rating,Description,YouTubeLink") ] Movie movie, HttpPostedFileBase upload)
+        public async Task<ActionResult> Create([Bind(Include = "ID,Title,ReleaseDate,GenreId,Rating,Description,YouTubeLink")] Movie movie, HttpPostedFileBase upload)
         {
             if (upload != null && upload.ContentLength > 0)
             {
@@ -65,6 +64,7 @@ namespace KinoSuite.Controllers
                 {
                     avatar.Content = reader.ReadBytes(upload.ContentLength);
                 }
+                
                 movie.Files = new List<Models.File> { avatar };
             }
 
@@ -75,6 +75,7 @@ namespace KinoSuite.Controllers
                 return RedirectToAction("Index");
             }
 
+            ViewBag.GenreId = new SelectList(db.Genres, "ID", "Name", movie.GenreId);
             return View(movie);
         }
 
@@ -90,22 +91,50 @@ namespace KinoSuite.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.GenreId = new SelectList(db.Genres, "ID", "Name", movie.GenreId);
             return View(movie);
         }
 
         // POST: Movies/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "ID,Title,ReleaseDate,Genre,Rating,Description,YouTubeLink")] Movie movie)
+        public async Task<ActionResult> Edit([Bind(Include = "ID,Title,ReleaseDate,GenreId,Rating,Description,YouTubeLink")] Movie movie, HttpPostedFileBase upload)
         {
+            var avatar = new Models.File();
+
+            if (upload != null && upload.ContentLength > 0)
+            {
+                avatar = new Models.File
+                {
+                    Movie = movie,
+                    MovieId = movie.ID,
+                    FileName = System.IO.Path.GetFileName(upload.FileName),
+                    FileType = FileType.Stock,
+                    ContentType = upload.ContentType
+                };
+                using (var reader = new System.IO.BinaryReader(upload.InputStream))
+                {
+                    avatar.Content = reader.ReadBytes(upload.ContentLength);
+                }
+                
+                if (movie.Files != null)
+                {
+                    movie.Files = null;
+                    db.Files.Remove(movie.Files.FirstOrDefault());
+                }
+                movie.Files = new List<Models.File> { avatar };
+            }
+
             if (ModelState.IsValid)
             {
                 db.Entry(movie).State = EntityState.Modified;
+                
+                await db.SaveChangesAsync();
+                db.Files.Add(avatar);
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
+            ViewBag.GenreId = new SelectList(db.Genres, "ID", "Name", movie.GenreId);
             return View(movie);
         }
 

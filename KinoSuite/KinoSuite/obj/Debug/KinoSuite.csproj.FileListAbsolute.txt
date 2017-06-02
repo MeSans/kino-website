@@ -200,3 +200,5 @@ C:\Users\Patriks-Pc\Desktop\kino-application\kino-suite\KinoSuite\KinoSuite\obj\
 C:\Users\Patriks-Pc\Desktop\kino-application\kino-suite\KinoSuite\KinoSuite\obj\Debug\KinoSuite.Migrations.nope.resources
 C:\Users\Patriks-Pc\Desktop\kino-application\kino-suite\KinoSuite\KinoSuite\obj\Debug\KinoSuite.Migrations.noempployeemanager.resources
 C:\Users\Patriks-Pc\Desktop\kino-application\kino-suite\KinoSuite\KinoSuite\obj\Debug\KinoSuite.Migrations.adressesstring.resources
+C:\Users\Patriks-Pc\Desktop\kino-application\kino-suite\KinoSuite\KinoSuite\obj\Debug\KinoSuite.Migrations.pulloutgenre.resources
+C:\Users\Patriks-Pc\Desktop\kino-application\kino-suite\KinoSuite\KinoSuite\obj\Debug\KinoSuite.Migrations.goddmanit.resources

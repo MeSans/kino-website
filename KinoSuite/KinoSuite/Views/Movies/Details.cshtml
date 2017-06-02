@@ -11,17 +11,17 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
+            @Html.DisplayNameFor(model => model.Genre.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Genre.Name)
+        </dd>
+
+        <dt>
             @Html.DisplayNameFor(model => model.Title)
         </dt>
-        @if (Model.Files.Any(f => f.FileType == FileType.Stock))
-        {
-            <dt>
-                Picture
-            </dt>
-            <dd>
-                <img class="details-img" src="~/File?id=@Model.Files.First(f => f.FileType == FileType.Stock).FileId" alt="Picture" />
-            </dd>
-        }
+
         <dd>
             @Html.DisplayFor(model => model.Title)
         </dd>
@@ -32,14 +32,6 @@
 
         <dd>
             @Html.DisplayFor(model => model.ReleaseDate)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Genre)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Genre)
         </dd>
 
         <dt>
@@ -65,6 +57,13 @@
         <dd>
             @Html.DisplayFor(model => model.YouTubeLink)
         </dd>
+        @if (Model.Files.Any(f => f.FileType == FileType.Stock))
+                            {
+        <dt>Picture</dt>
+            <dd>
+                  <img class="details-img" src="~/File?id=@Model.Files.First(f => f.FileType == FileType.Stock).FileId" alt="Picture" />
+            </dd>
+        }
 
     </dl>
 </div>

@@ -1,13 +1,14 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
+
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+ 
 
-    
         <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
         <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lato">
         @RenderSection("Content", false)
@@ -37,6 +38,7 @@
                         <li>@Html.ActionLink("Movies", "Index", "Movies", null, null)</li>
                         <li>@Html.ActionLink("Venues", "Index", "Venues", null, null)</li>
                         <li>@Html.ActionLink("Screenings", "Index", "Screenings", null, null)</li>
+                        <li>@Html.ActionLink("Genres", "Index", "Genres",null,null)</li>
                     }
 
                 </ul>

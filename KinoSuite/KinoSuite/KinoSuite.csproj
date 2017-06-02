@@ -187,6 +187,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\FileController.cs" />
+    <Compile Include="Controllers\GenresController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MoviesController.cs" />
@@ -256,10 +257,19 @@
     <Compile Include="Migrations\201706020806363_adresses-string.Designer.cs">
       <DependentUpon>201706020806363_adresses-string.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706020918369_pull-out-genre.cs" />
+    <Compile Include="Migrations\201706020918369_pull-out-genre.Designer.cs">
+      <DependentUpon>201706020918369_pull-out-genre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706020925321_goddmanit.cs" />
+    <Compile Include="Migrations\201706020925321_goddmanit.Designer.cs">
+      <DependentUpon>201706020925321_goddmanit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\File.cs" />
     <Compile Include="Models\FileType.cs" />
+    <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Movie.cs" />
@@ -358,11 +368,11 @@
     <Content Include="Views\Venues\Details.cshtml" />
     <Content Include="Views\Venues\Edit.cshtml" />
     <Content Include="Views\Venues\Index.cshtml" />
-    <Content Include="Views\Venues1\Create.cshtml" />
-    <Content Include="Views\Venues1\Delete.cshtml" />
-    <Content Include="Views\Venues1\Details.cshtml" />
-    <Content Include="Views\Venues1\Edit.cshtml" />
-    <Content Include="Views\Venues1\Index.cshtml" />
+    <Content Include="Views\Genres\Create.cshtml" />
+    <Content Include="Views\Genres\Delete.cshtml" />
+    <Content Include="Views\Genres\Details.cshtml" />
+    <Content Include="Views\Genres\Edit.cshtml" />
+    <Content Include="Views\Genres\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -420,6 +430,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706020806363_adresses-string.resx">
       <DependentUpon>201706020806363_adresses-string.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706020918369_pull-out-genre.resx">
+      <DependentUpon>201706020918369_pull-out-genre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706020925321_goddmanit.resx">
+      <DependentUpon>201706020925321_goddmanit.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

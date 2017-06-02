@@ -19,9 +19,10 @@ namespace KinoSuite.Controllers
             var queryResults =
                 (from mov in context.Movies
                 join screen in context.Screenings on mov.ID equals screen.MovieId
+                where (screen.ScreeningStart.Value.Year == System.DateTime.Now.Year & screen.ScreeningStart.Value.Month == System.DateTime.Now.Month)
                 select new UpcomingScreening {
                     Title = mov.Title,
-                    genre = mov.Genre,
+                    genre = mov.Genre.Name,
                     Image = mov.Files.FirstOrDefault().Content,
                     language = screen.SubtitleLanguage,
                     Description = mov.Description,

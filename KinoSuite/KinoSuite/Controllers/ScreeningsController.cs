@@ -12,7 +12,6 @@ using KinoSuite.Models;
 
 namespace KinoSuite.Controllers
 {
-    [Authorize]
     public class ScreeningsController : Controller
     {
         private KinoContext db = new KinoContext();
@@ -43,7 +42,7 @@ namespace KinoSuite.Controllers
         public ActionResult Create()
         {
             ViewBag.MovieId = new SelectList(db.Movies, "ID", "Title");
-            ViewBag.VenueId = new SelectList(db.Venues, "ID", "ID");
+            ViewBag.VenueId = new SelectList(db.Venues, "ID", "Name");
             return View();
         }
 
@@ -62,7 +61,7 @@ namespace KinoSuite.Controllers
             }
 
             ViewBag.MovieId = new SelectList(db.Movies, "ID", "Title", screening.MovieId);
-            ViewBag.VenueId = new SelectList(db.Venues, "ID", "ID", screening.VenueId);
+            ViewBag.VenueId = new SelectList(db.Venues, "ID", "Name", screening.VenueId);
             return View(screening);
         }
 
@@ -79,7 +78,7 @@ namespace KinoSuite.Controllers
                 return HttpNotFound();
             }
             ViewBag.MovieId = new SelectList(db.Movies, "ID", "Title", screening.MovieId);
-            ViewBag.VenueId = new SelectList(db.Venues, "ID", "ID", screening.VenueId);
+            ViewBag.VenueId = new SelectList(db.Venues, "ID", "Name", screening.VenueId);
             return View(screening);
         }
 
@@ -97,7 +96,7 @@ namespace KinoSuite.Controllers
                 return RedirectToAction("Index");
             }
             ViewBag.MovieId = new SelectList(db.Movies, "ID", "Title", screening.MovieId);
-            ViewBag.VenueId = new SelectList(db.Venues, "ID", "ID", screening.VenueId);
+            ViewBag.VenueId = new SelectList(db.Venues, "ID", "Name", screening.VenueId);
             return View(screening);
         }
 
