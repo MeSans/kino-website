@@ -27,26 +27,19 @@ namespace KinoSuite.Controllers
                  select new UpcomingScreening
                  {
                      Title = mov.Title,
-                     genre = SelectedGenre.ToString(),
+                     genre = mov.Genre.Name,
                      Image = mov.Files.FirstOrDefault().Content,
                      language = screen.SubtitleLanguage,
                      Description = mov.Description,
-                     length = DbFunctions.DiffMinutes(screen.ScreeningEnd, screen.ScreeningStart),
+                     length = ((screen.ScreeningEnd.Value.Hour - screen.ScreeningStart.Value.Hour) * 60) + (screen.ScreeningEnd.Value.Minute - screen.ScreeningStart.Value.Minute),
                      youtube_link = mov.YouTubeLink,
-                     startTime = screen.ScreeningStart,
-                     venue = screen.Venue.Name
+                     startTime = screen.ScreeningStart.Value,
+                     venue = screen.Venue.Name,
+                     isPremiere = (bool)screen.IsPremiere
 
                  }).ToList();
             var viewModel = new UpcomingScreeningsViewModel();
             viewModel.ScreeningItems = queryResults;
-            viewModel.Genres = context.Genres;
-       /*        Select(c => new SelectListItem
-               {
-                   Value = c.DropDownID.ToString(),
-                   Text = c.DropDownText
-               });
-            viewModel.Genres = (from genr in context.Genres select genr.Name).ToList();
-            */
             return View(viewModel);
         }
     }

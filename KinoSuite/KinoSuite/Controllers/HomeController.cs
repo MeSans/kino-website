@@ -12,6 +12,7 @@ namespace KinoSuite.Controllers
 {
     public class HomeController : Controller
     {
+        
         public ActionResult Index()
         {
             var context = new KinoContext();
@@ -26,10 +27,11 @@ namespace KinoSuite.Controllers
                     Image = mov.Files.FirstOrDefault().Content,
                     language = screen.SubtitleLanguage,
                     Description = mov.Description,
-                    length = DbFunctions.DiffMinutes(screen.ScreeningEnd, screen.ScreeningStart),
+                    length = ((screen.ScreeningEnd.Value.Hour - screen.ScreeningStart.Value.Hour)*60) + (screen.ScreeningEnd.Value.Minute - screen.ScreeningStart.Value.Minute),
                     youtube_link = mov.YouTubeLink,
                     startTime = screen.ScreeningStart.Value,
-                    venue = screen.Venue.Name
+                    venue = screen.Venue.Name,
+                    isPremiere = (bool)screen.IsPremiere
                     
                 }).ToList();
                 var viewModel = new UpcomingScreeningsViewModel();
@@ -54,18 +56,3 @@ namespace KinoSuite.Controllers
     }
 }
 
-//            using (var ctx = new KinoContext())
-//            {
-//                Movie movie = new Movie() { Title = "testmovie", ID = 1, ReleaseDate = DateTime.Now, Genre = "action", Rating = 2, Description = "potatofilm", YouTubeLink = "link", Screenings = null };
-//ctx.Movies.Add(movie);
-//                ctx.SaveChanges();
-
-//                var query = from test in ctx.Movies
-//                            orderby test.Title
-//                            select test;
-
-//                foreach (var item in query)
-//                {
-//                    ViewBag.Items += item.Title;
-//                }
-//            }

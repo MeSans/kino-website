@@ -16,8 +16,6 @@ namespace KinoSuite.Models
             this.ScreeningItems = new List<UpcomingScreening>();
         }
         public List<Models.UpcomingScreening> ScreeningItems;
-        public IEnumerable<Models.Genre> Genres;
-        public string SelectedGenre { get; set; }
 
     }
 }
