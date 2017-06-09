@@ -1,0 +1,84 @@
+﻿@model KinoSuite.Models.UpcomingScreeningsViewModel
+
+@{
+    ViewBag.Title = "View";
+}
+
+<div class="row control-block">
+    <div class="col-sm-12">
+        <div class="jumbotron">
+            @using (Html.BeginForm())
+            {
+                <p>
+                    Find by name: @Html.TextBox("SearchString")
+                    <input type="submit" value="Search" />
+                </p>
+                <h2>
+                    Screening Start
+                </h2>
+                <p>
+                    From
+                    <input class="form-control text-box single-line" data-val="true" data-val-date="The field Screening start must be a date." id="ScreeningStart" name="ScreeningStart" type="datetime-local" value="">
+                </p>
+                <p>
+                    To
+                    <input class="form-control text-box single-line" data-val="true" data-val-date="The field Screening start must be a date." id="ScreeningEnd" name="ScreeningEnd" type="datetime-local" value="">
+                </p>
+                <p>
+                    Movie release date
+                </p>
+                <p>
+                    from
+                    <input class="form-control text-box single-line" data-val="true" data-val-date="The field Screening start must be a date." id="ReleaseStart" name="ReleaseStart" type="datetime-local" value="">
+                </p>
+                <p>
+                    to
+                    <input class="form-control text-box single-line" data-val="true" data-val-date="The field Screening start must be a date." id="ReleaseEnd" name="ReleaseEnd" type="datetime-local" value="">
+                </p>
+
+
+
+
+            }
+
+        </div>
+        </div>
+</div>
+
+<div class="row">
+
+
+    @foreach (var item in Model.ScreeningItems)
+    {
+        <div class="row upcoming-screening row-eq-height">
+            <div class="col-sm-4">
+                @if (@item.Image != null)
+                {
+                    <img class="screening-img img-responsive" src="data:image;base64,@System.Convert.ToBase64String(@item.Image)" alt="img" />
+                }
+                @if (@item.youtube_link != "")
+                {
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe class="youtube-video" src="@item.youtube_link" allowfullscreen></iframe>
+                    </div>
+                }
+            </div>
+            <div class="col-sm-8">
+                <h1>@item.Title <br /> @item.genre</h1>
+                <h2>@item.Description</h2>
+                <h3>Screening start: @item.startTime</h3>
+                <h3>Movie length: @item.length minutes</h3>
+                @if (@item.isPremiere == true)
+                {
+                    <h4>Premiere</h4>
+                }
+                
+                <h4>Subtitle language: @item.language</h4>
+            </div>
+
+        </div>
+    }
+</div>
+
+
+

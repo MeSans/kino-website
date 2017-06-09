@@ -304,10 +304,7 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="ClassDiagram1.cd" />
-    <Content Include="ClassDiagram2.cd" />
-    <Content Include="ClassDiagram3.cd" />
-    <Content Include="ClassDiagram4.cd" />
+    <None Include="Properties\PublishProfiles\Kino-ftp_profile.pubxml" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.1.1.js" />
     <Content Include="Scripts\jquery-3.1.1.min.js" />
@@ -387,6 +384,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="App_Themes\ion\" />
+    <Folder Include="img\" />
     <Folder Include="Views\File\" />
   </ItemGroup>
   <ItemGroup>
