@@ -12,7 +12,7 @@ using KinoSuite.Models;
 
 namespace KinoSuite.Controllers
 {
-    [Authorize]
+    
     public class AccountController : Controller
     {
         private ApplicationSignInManager _signInManager;

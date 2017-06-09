@@ -1,0 +1,67 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+.details-img{
+    max-height:400px;
+    max-width:400px;
+}
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+.upcoming-screening {
+    border-bottom-style:solid;
+    border-bottom-width:1px;
+    padding-bottom:4px;
+    padding-top:4px;
+}
+/*Set ALL the fonts to Lato. Can be overridden with inlines or importance qualifiers*/
+*
+{
+    font-family:'Lato',serif;
+}
+
+#text-red {
+    color:red;
+    background-color:rebeccapurple;
+}
+/*.screening-img {
+    display: block;
+    max-width:100%;
+    max-height:100%;
+    
+}*/
+.logo-img
+{
+    background: url(../img/__kino_logo.jpg) no-repeat top left;
+    display: block;
+    max-width:100%;
+    max-height:100%;
+    text-indent: -9999px; /* hides the link text */
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.youtube-video
+{
+    margin-top = 10px;
+}
