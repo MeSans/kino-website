@@ -5,6 +5,7 @@ using System.Web;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Collections;
+using ExpressiveAnnotations.Attributes;
 
 namespace KinoSuite.Models
 {
@@ -17,11 +18,13 @@ namespace KinoSuite.Models
         [Display(Name = "Screening start")]
         [DataType(DataType.DateTime)]
         [DisplayFormat(DataFormatString = "{0:MM-dd-yyyy hh:mm tt}", ApplyFormatInEditMode = true)]
+        [AssertThat("ScreeningStart < ScreeningEnd", ErrorMessage = ("Screening start must be before Screening end"))]
         public DateTime? ScreeningStart { get; set; }
 
         [Display(Name = "Screening end")]
         [DataType(DataType.DateTime)]
         [DisplayFormat(DataFormatString = "{0:MM-dd-yyyy hh:mm tt}", ApplyFormatInEditMode = true)]
+        [AssertThat("ScreeningStart < ScreeningEnd", ErrorMessage = ("Screening start must be before Screening end"))]
         public DateTime? ScreeningEnd { get; set; } 
 
         [Display(Name = "Price")]
@@ -39,7 +42,7 @@ namespace KinoSuite.Models
 
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
         {
-            if (this.ScreeningStart < this.ScreeningEnd)
+            if (this.ScreeningStart > this.ScreeningEnd)
             {
                 yield return new ValidationResult("Screening start should be before screening end", new[] { "ScreeningStart" });
             }

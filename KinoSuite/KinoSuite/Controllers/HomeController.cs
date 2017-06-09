@@ -42,14 +42,15 @@ namespace KinoSuite.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Title = "Cinema 'Kino' ";
+            ViewBag.Message = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi suscipit odio magna, vel blandit nulla semper eu. Etiam laoreet sagittis euismod. In euismod lobortis ultrices. Aliquam erat volutpat. Donec a massa purus. Praesent quis orci justo. Etiam auctor, turpis ut sagittis lobortis, metus ex egestas erat, in interdum ligula urna a tortor. Integer posuere facilisis eros et commodo. Quisque et nulla tincidunt, egestas purus non, aliquet elit. Maecenas volutpat erat et lacus imperdiet, vel hendrerit velit ultricies.";
 
             return View();
         }
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "Contact information";
 
             return View();
         }

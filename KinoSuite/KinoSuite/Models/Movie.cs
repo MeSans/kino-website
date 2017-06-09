@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using ExpressiveAnnotations.Attributes;
 using System.Linq;
 using System.Web;
 using System.Collections.Generic;
@@ -43,8 +44,6 @@ namespace KinoSuite.Models
 
         public virtual ICollection<Screening> Screenings { get; set; }
         
-        //Currently [6/2/2017] contains just one file. 
-        //Should stay as list for it is very likely that site will need more files per movie in future.
         public virtual ICollection<File> Files { get; set; }
 
 
