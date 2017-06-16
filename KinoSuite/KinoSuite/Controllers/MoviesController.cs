@@ -46,15 +46,13 @@ namespace KinoSuite.Controllers
         }
 
         // POST: Movies/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Create([Bind(Include = "ID,Title,ReleaseDate,GenreId,Rating,Description,YouTubeLink")] Movie movie, HttpPostedFileBase upload)
         {
             if (upload != null && upload.ContentLength > 0)
             {
-                var avatar = new Models.File
+                var Picture = new Models.File
                 {
                     FileName = System.IO.Path.GetFileName(upload.FileName),
                     FileType = FileType.Stock,
@@ -62,10 +60,10 @@ namespace KinoSuite.Controllers
                 };
                 using (var reader = new System.IO.BinaryReader(upload.InputStream))
                 {
-                    avatar.Content = reader.ReadBytes(upload.ContentLength);
+                    Picture.Content = reader.ReadBytes(upload.ContentLength);
                 }
                 
-                movie.Files = new List<Models.File> { avatar };
+                movie.Files = new List<Models.File> { Picture };
             }
 
             if (ModelState.IsValid)

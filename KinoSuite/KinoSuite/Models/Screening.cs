@@ -39,6 +39,11 @@ namespace KinoSuite.Models
         [RegularExpression(@"^[a-zA-Z''-'\s]{1,40}$", ErrorMessage = "Disallowed characters in subtitle language")]
         public string SubtitleLanguage { get; set; }
 
+        [Display(Name = "Language")]
+        [StringLength(60)]
+        [RegularExpression(@"^[a-zA-Z''-'\s]{1,40}$", ErrorMessage = "Disallowed characters in subtitle language")]
+        public string Language { get; set; }
+
 
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
         {
@@ -63,13 +68,3 @@ namespace KinoSuite.Models
 
 }
 
-//Screening
-//ID
-//  Id_Movie
-//  Id_Venue
-//ScreeningStart
-//ScreeningEnd
-//BasePrice
-//IsPremiere
-//Language
-//SubtitleLanguage

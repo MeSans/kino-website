@@ -467,3 +467,4 @@ C:\Users\Patriks-Pc\Desktop\Laptop_version\kino-suite\KinoSuite\KinoSuite\obj\De
 C:\Users\Patriks-Pc\Desktop\Laptop_version\kino-suite\KinoSuite\KinoSuite\obj\Debug\KinoSuite.csproj.GenerateResource.Cache
 C:\Users\Patriks-Pc\Desktop\Laptop_version\kino-suite\KinoSuite\KinoSuite\obj\Debug\KinoSuite.dll
 C:\Users\Patriks-Pc\Desktop\Laptop_version\kino-suite\KinoSuite\KinoSuite\obj\Debug\KinoSuite.pdb
+C:\Users\Patriks-Pc\Desktop\Laptop_version\kino-suite\KinoSuite\KinoSuite\obj\Debug\KinoSuite.Migrations.addedlanguageproperty.resources

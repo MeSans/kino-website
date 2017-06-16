@@ -32,6 +32,9 @@
         <th>
             @Html.DisplayNameFor(model => model.SubtitleLanguage)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Language)
+        </th>
         <th></th>
     </tr>
 
@@ -57,6 +60,9 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.SubtitleLanguage)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Language)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new {  id=item.ID  }) |

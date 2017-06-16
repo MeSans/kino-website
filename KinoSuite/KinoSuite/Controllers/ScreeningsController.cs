@@ -51,7 +51,7 @@ namespace KinoSuite.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "ID,MovieId,VenueId,ScreeningStart,ScreeningEnd,BasePrice,IsPremiere,SubtitleLanguage")] Screening screening)
+        public async Task<ActionResult> Create([Bind(Include = "ID,MovieId,VenueId,ScreeningStart,ScreeningEnd,BasePrice,IsPremiere,SubtitleLanguage,Language")] Screening screening)
         {
             if (ModelState.IsValid)
             {
@@ -87,7 +87,7 @@ namespace KinoSuite.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "ID,MovieId,VenueId,ScreeningStart,ScreeningEnd,BasePrice,IsPremiere,SubtitleLanguage")] Screening screening)
+        public async Task<ActionResult> Edit([Bind(Include = "ID,MovieId,VenueId,ScreeningStart,ScreeningEnd,BasePrice,IsPremiere,SubtitleLanguage,Language")] Screening screening)
         {
             if (ModelState.IsValid)
             {

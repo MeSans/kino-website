@@ -5,7 +5,7 @@
 }
 
 <div class="jumbotron">
-    <h1>What's on this month</h1> 
+    <h1>Coming soon</h1> 
 </div>
 
 
@@ -23,16 +23,11 @@
                 <div class="col-sm-4">
                     @if (@item.Image != null)
                     {
-                        <img class="screening-img img-responsive" src="data:image;base64,@System.Convert.ToBase64String(@item.Image)" alt="img" />
+                        <img class="center-block img-responsive" src="data:image;base64,@System.Convert.ToBase64String(@item.Image)" alt="img" />
                     }
-                    @if (@item.youtube_link != "")
-                    {
-                        <div class="embed-responsive embed-responsive-16by9">
-                        <iframe class="youtube-video" src="@item.youtube_link" allowfullscreen></iframe>
-                        </div>
-                    }
+
                 </div>
-                <div class="col-sm-8">
+                <div class="col-sm-6">
                     <h1>@item.Title <br /> @item.genre</h1>
                     <h2>@item.Description</h2>
                     <h3>Screening start: @item.startTime</h3>
@@ -41,7 +36,17 @@
                 {
                         <h4>Premiere</h4>
                     }
-                    <h4>Subtitle language: @item.language</h4>                                       
+                    <h4>Language: @item.language</h4>
+                    <h4>Subtitle language: @item.subtitleLanguage</h4>
+                    @if (@item.youtube_link != "")
+                    {
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe class="youtube-video" src="@item.youtube_link" allowfullscreen></iframe>
+                        </div>
+                    }                                       
+                </div>
+                <div class="col-sm-2 padding">
+
                 </div>
                 
             </div>

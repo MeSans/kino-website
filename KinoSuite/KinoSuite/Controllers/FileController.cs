@@ -1,7 +1,7 @@
 ﻿using KinoSuite.Models;
 using System.Web.Mvc;
 
-namespace ContosoUniversity.Controllers
+namespace Kinosuite.Controllers
 {
     public class FileController : Controller
     {

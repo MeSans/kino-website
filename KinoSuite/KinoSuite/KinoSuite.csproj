@@ -274,6 +274,10 @@
     <Compile Include="Migrations\201706021225466_screening-removed-weird-keys.Designer.cs">
       <DependentUpon>201706021225466_screening-removed-weird-keys.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706100936505_added-language-property.cs" />
+    <Compile Include="Migrations\201706100936505_added-language-property.Designer.cs">
+      <DependentUpon>201706100936505_added-language-property.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\File.cs" />
@@ -451,6 +455,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706021225466_screening-removed-weird-keys.resx">
       <DependentUpon>201706021225466_screening-removed-weird-keys.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706100936505_added-language-property.resx">
+      <DependentUpon>201706100936505_added-language-property.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

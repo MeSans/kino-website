@@ -9,35 +9,64 @@
         <div class="jumbotron">
             @using (Html.BeginForm())
             {
-                <p>
-                    Find by name: @Html.TextBox("SearchString")
-                    <input type="submit" value="Search" />
-                </p>
-                <h2>
-                    Screening Start
-                </h2>
-                <p>
-                    From
-                    <input class="form-control text-box single-line" data-val="true" data-val-date="The field Screening start must be a date." id="ScreeningStart" name="ScreeningStart" type="datetime-local" value="">
-                </p>
-                <p>
-                    To
-                    <input class="form-control text-box single-line" data-val="true" data-val-date="The field Screening start must be a date." id="ScreeningEnd" name="ScreeningEnd" type="datetime-local" value="">
-                </p>
-                <p>
-                    Movie release date
-                </p>
-                <p>
-                    from
-                    <input class="form-control text-box single-line" data-val="true" data-val-date="The field Screening start must be a date." id="ReleaseStart" name="ReleaseStart" type="datetime-local" value="">
-                </p>
-                <p>
-                    to
-                    <input class="form-control text-box single-line" data-val="true" data-val-date="The field Screening start must be a date." id="ReleaseEnd" name="ReleaseEnd" type="datetime-local" value="">
-                </p>
+                    <div class="row">
 
+                        <div class="row outlined-black">
+                            <div class="col-sm-6">
+                                <label for="SearchString">Movie name:</label><br />
+                                @Html.TextBox("SearchString")
+                            </div>
+                            <div class="col-sm-6">
+                                <label for="SelectedGenreId">Genre:</label>
+                                @Html.DropDownList("SelectedGenreId", null,"Select Genre", htmlAttributes: new { @class = "form-control single-line" })
+                            </div>
+                        </div>
+                        <div class="row ">
+                            <div class="col-sm-12">
+                                <h2>
+                                    Screening Start:
+                                </h2>
+                            </div>
+                        </div>
+                        <div class="row outlined-black">
+                            <div class="col-sm-6">
+                                <label for="ScreeningStart">From:</label>
+                                <input class="form-control text-box" data-val="true" data-val-date="The field Screening start must be a date." id="ScreeningStart" name="ScreeningStart" type="datetime-local" value="">
+                            </div>
+                            <div class="col-sm-6">
+                                <label for="ScreeningEnd">To:</label>
+                                <input class="form-control text-box" data-val="true" data-val-date="The field Screening start must be a date." id="ScreeningEnd" name="ScreeningEnd" type="datetime-local" value="">
+                            </div>
+                        </div>
 
+                        <div class="row ">
+                            <div class="col-sm-12">
+                                <h2>
+                                   Movie release:
+                                </h2>
+                            </div>
+                        </div>
 
+                        <div class="row outlined-black">
+                            <div class="col-sm-6">
+                                <label for="ReleaseStart">From:</label>
+                                <input class="form-control text-box" data-val="true" data-val-date="The field Screening start must be a date." id="ReleaseStart" name="ReleaseStart" type="datetime-local" value="">
+                            </div>
+                            <div class="col-sm-6">
+                                <label for="ReleaseEnd">To:</label>
+                                <input class="form-control text-box " data-val="true" data-val-date="The field Screening start must be a date." id="ReleaseEnd" name="ReleaseEnd" type="datetime-local" value="">
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="row ">
+                        <div class="col-sm-12 center-block">
+                            <h2>
+                                <input type="submit" value="Search" />
+                            </h2>
+                        </div>
+                    </div>
 
             }
 
@@ -54,16 +83,11 @@
             <div class="col-sm-4">
                 @if (@item.Image != null)
                 {
-                    <img class="screening-img img-responsive" src="data:image;base64,@System.Convert.ToBase64String(@item.Image)" alt="img" />
+                    <img class="center-block img-responsive" src="data:image;base64,@System.Convert.ToBase64String(@item.Image)" alt="img" />
                 }
-                @if (@item.youtube_link != "")
-                {
-                    <div class="embed-responsive embed-responsive-16by9">
-                        <iframe class="youtube-video" src="@item.youtube_link" allowfullscreen></iframe>
-                    </div>
-                }
+
             </div>
-            <div class="col-sm-8">
+            <div class="col-sm-6">
                 <h1>@item.Title <br /> @item.genre</h1>
                 <h2>@item.Description</h2>
                 <h3>Screening start: @item.startTime</h3>
@@ -72,8 +96,17 @@
                 {
                     <h4>Premiere</h4>
                 }
-                
-                <h4>Subtitle language: @item.language</h4>
+                <h4>Language: @item.language</h4>
+                <h4>Subtitle language: @item.subtitleLanguage</h4>
+                @if (@item.youtube_link != "")
+                {
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe class="youtube-video" src="@item.youtube_link" allowfullscreen></iframe>
+                    </div>
+                }
+            </div>
+            <div class="col-sm-2 padding">
+
             </div>
 
         </div>
