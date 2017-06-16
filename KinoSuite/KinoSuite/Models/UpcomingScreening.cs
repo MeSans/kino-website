@@ -12,6 +12,7 @@ namespace KinoSuite.Models
         {
             this.Image = new byte[] { 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20 }; ;
             this.length = 0;
+            //this.rating = 0;
             this.Title = "";
             this.genre = "";
             this.venue = "";
@@ -35,6 +36,7 @@ namespace KinoSuite.Models
         public int? length { get; set; }
         public string youtube_link { get; set; }
         public string venue { get; set; }
+        //public int rating { get; set; }
     
     }
 }

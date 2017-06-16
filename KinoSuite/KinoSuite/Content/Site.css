@@ -3,21 +3,34 @@
     padding-bottom: 20px;
 }
 
-/* Set padding to keep content from hitting the edges */
 .body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 50px;
+    padding-right: 50px;
+    
+    background-color:#eee;
 }
-
-.img-responsive { 
-    min-width: 50%;
+.jumbotron {
+    border: 1px solid #d3d3d3;
 }
-
+.img-expanded {
+    width: 100%;
+    height:100%;
+}
+.no-padding {
+  padding-left: 0;
+  padding-right: 0;
+}
 /* Override the default bootstrap behavior where horizontal description lists 
    will truncate terms that are too long to fit in the left column 
 */
 .dl-horizontal dt {
     white-space: normal;
+}
+.row-eq-height {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display:         flex;
 }
 .details-img{
     max-height:400px;
