@@ -11,10 +11,10 @@
             {
                     <div class="row">
 
-                        <div class="row outlined-black">
+                        <div class="row">
                             <div class="col-sm-6">
                                 <label for="SearchString">Movie name:</label><br />
-                                @Html.TextBox("SearchString")
+                                @Html.TextBox("SearchString", null, new { @class = "form-control text-box" })
                             </div>
                             <div class="col-sm-6">
                                 <label for="SelectedGenreId">Genre:</label>
@@ -28,7 +28,7 @@
                                 </h2>
                             </div>
                         </div>
-                        <div class="row outlined-black">
+                        <div class="row ">
                             <div class="col-sm-6">
                                 <label for="ScreeningStart">From:</label>
                                 <input class="form-control text-box" data-val="true" data-val-date="The field Screening start must be a date." id="ScreeningStart" name="ScreeningStart" type="datetime-local" value="">
@@ -47,7 +47,7 @@
                             </div>
                         </div>
 
-                        <div class="row outlined-black">
+                        <div class="row ">
                             <div class="col-sm-6">
                                 <label for="ReleaseStart">From:</label>
                                 <input class="form-control text-box" data-val="true" data-val-date="The field Screening start must be a date." id="ReleaseStart" name="ReleaseStart" type="datetime-local" value="">
@@ -61,7 +61,7 @@
                     </div>
 
                     <div class="row ">
-                        <div class="col-sm-12 center-block">
+                        <div class="col-sm-12 center-block text-center">
                             <h2>
                                 <input type="submit" value="Search" />
                             </h2>
@@ -79,36 +79,100 @@
 
     @foreach (var item in Model.ScreeningItems)
     {
-        <div class="row upcoming-screening row-eq-height">
-            <div class="col-sm-4">
+        <div class="row row-eq-height">
+            <div class="col-sm-1 padding">
+
+            </div>
+            <div class="col-sm-4 no-padding">
                 @if (@item.Image != null)
                 {
-                    <img class="center-block img-responsive" src="data:image;base64,@System.Convert.ToBase64String(@item.Image)" alt="img" />
+                    <img class="img-expanded" src="data:image;base64,@System.Convert.ToBase64String(@item.Image)" alt="img" />
                 }
-
             </div>
             <div class="col-sm-6">
-                <h1>@item.Title <br /> @item.genre</h1>
-                <h2>@item.Description</h2>
-                <h3>Screening start: @item.startTime</h3>
-                <h3>Movie length: @item.length minutes</h3>
-                @if (@item.isPremiere == true)
-                {
-                    <h4>Premiere</h4>
-                }
-                <h4>Language: @item.language</h4>
-                <h4>Subtitle language: @item.subtitleLanguage</h4>
-                @if (@item.youtube_link != "")
-                {
-                    <div class="embed-responsive embed-responsive-16by9">
-                        <iframe class="youtube-video" src="@item.youtube_link" allowfullscreen></iframe>
+
+                <div class="row">
+                    <div class="col-sm-6">
+
+                        <h1>@item.Title</h1>
                     </div>
-                }
+                    <div class="col-sm-6">
+
+                       <h2> @item.genre</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h3>
+                            @item.Description
+                        </h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h3>
+                        Movie Length: @item.length
+                        </h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h3>
+                        Screening Starts : @item.startTime
+                        </h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h3>
+                        Language: @item.language
+                        </h3>
+                    </div>
+                    <div class="col-sm-6">
+                        <h3>
+                        Subtitle language: @item.subtitleLanguage
+                        </h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-8">
+                        @if (@item.isPremiere == true)
+                        {
+                            <span>Premiere!</span>
+                        }
+                    </div>
+                    <div class="col-sm-4">
+
+                        @{
+                            for (int i = 0; i < 5; i++)
+                            {
+                                if (i < item.rating)
+                                {
+                                    <span class="star-icon full">☆</span>
+                                }
+                                else
+                                {
+                                    <span class="star-icon">☆</span>
+                                }
+                            }
+                        }
+                        
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        @if (@item.youtube_link != "")
+                {
+                            <div class="embed-responsive embed-responsive-16by9">
+                                <iframe class="youtube-video" src="@item.youtube_link" allowfullscreen></iframe>
+                            </div>
+                        }
+                    </div>
+                </div>
             </div>
-            <div class="col-sm-2 padding">
+            <div class="col-sm-1 padding">
 
             </div>
-
         </div>
     }
 </div>

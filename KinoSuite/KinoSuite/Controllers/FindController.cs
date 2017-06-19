@@ -36,7 +36,8 @@ namespace KinoSuite.Controllers
                      youtube_link = mov.YouTubeLink,
                      startTime = screen.ScreeningStart.Value,
                      venue = screen.Venue.Name,
-                     isPremiere = (bool)screen.IsPremiere
+                     isPremiere = (bool)screen.IsPremiere,
+                     rating = mov.Rating
 
                  }).ToList();
             var viewModel = new UpcomingScreeningsViewModel();

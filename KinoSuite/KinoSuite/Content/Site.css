@@ -4,11 +4,23 @@
 }
 
 .body-content {
-    padding-left: 50px;
-    padding-right: 50px;
-    
+    display:block;
+    overflow:auto;    
     background-color:#eee;
+    overflow-x: hidden;
 }
+.star-icon {
+    color:#ddd;
+    font-size: 34px;
+    position:relative;
+}
+.star-icon.full:before {
+    color: #FDE16D;
+    content: '\2605'; /* Full star in UTF8 */
+    position: absolute;
+    left: 0;
+    text-shadow: 0 0 2px rgba(0,0,0,0.7);
+ }
 .jumbotron {
     border: 1px solid #d3d3d3;
 }
@@ -59,9 +71,6 @@ textarea {
     background-color:rebeccapurple;
 }
 
-.img-responsive {
-    padding-top : 40%;
-}
 
 .logo-img
 {

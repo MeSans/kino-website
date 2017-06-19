@@ -3,29 +3,46 @@
     padding-bottom: 20px;
 }
 
-/* Set padding to keep content from hitting the edges */
 .body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+    display:block;
+    overflow:auto;    
+    background-color:#eee;
+    overflow-x: hidden;
 }
-
-.img-responsive { 
-    min-width: 50%;
+.star-icon {
+    color:#ddd;
+    font-size: 34px;
+    position:relative;
 }
-
+.star-icon.full:before {
+    color: #FDE16D;
+    content: '\2605'; /* Full star in UTF8 */
+    position: absolute;
+    left: 0;
+    text-shadow: 0 0 2px rgba(0,0,0,0.7);
+ }
+.jumbotron {
+    border: 1px solid #d3d3d3;
+}
+.img-expanded {
+    width: 100%;
+    height:100%;
+}
+.no-padding {
+  padding-left: 0;
+  padding-right: 0;
+}
 /* Override the default bootstrap behavior where horizontal description lists 
    will truncate terms that are too long to fit in the left column 
 */
 .dl-horizontal dt {
     white-space: normal;
 }
-/*.form-control-inline {
-   width: auto;
-   float:left;
-   margin-right: 5px;
-}*/
-.outlined-black {
-    border: 1px solid black;
+.row-eq-height {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display:         flex;
 }
 .details-img{
     max-height:400px;
@@ -54,9 +71,6 @@ textarea {
     background-color:rebeccapurple;
 }
 
-.img-responsive {
-    padding-top : 40%;
-}
 
 .logo-img
 {

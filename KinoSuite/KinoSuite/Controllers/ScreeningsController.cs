@@ -9,6 +9,7 @@ using System.Web;
 using System.Web.Mvc;
 using KinoSuite;
 using KinoSuite.Models;
+using System.Globalization;
 
 namespace KinoSuite.Controllers
 {

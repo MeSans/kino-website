@@ -23,7 +23,7 @@ namespace KinoSuite.Models
 
         [Display(Name = "Screening end")]
         [DataType(DataType.DateTime)]
-        [DisplayFormat(DataFormatString = "{0:MM-dd-yyyy hh:mm tt}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:MM-dd-yyyy hh:mm tt}", ApplyFormatInEditMode = true)] 
         [AssertThat("ScreeningStart < ScreeningEnd", ErrorMessage = ("Screening start must be before Screening end"))]
         public DateTime? ScreeningEnd { get; set; } 
 
